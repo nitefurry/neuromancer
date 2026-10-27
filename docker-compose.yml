@@ -1,0 +1,17 @@
+services:
+  app:
+    build: .
+    container_name: neuromancer-control
+    restart: unless-stopped
+    ports:
+      # hanya lokal; reverse proxy (nginx/Caddy) yang menghadap internet
+      - "127.0.0.1:3000:3000"
+    environment:
+      HOST: 0.0.0.0
+      PORT: 3000
+      DATA_DIR: /app/data
+      ADMIN_EMAIL: owner@neuromancer.app
+      # Hanya dipakai saat data/ masih kosong. Ganti sebelum start pertama.
+      # ADMIN_PASSWORD: ganti-password-ini
+    volumes:
+      - ./data:/app/data
