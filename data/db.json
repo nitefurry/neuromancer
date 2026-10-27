@@ -1,0 +1,5127 @@
+{
+  "meta": {
+    "version": 1,
+    "createdAt": "2026-10-26T09:42:53.672Z",
+    "usingDefaultPassword": true,
+    "seedVersion": 1
+  },
+  "users": [
+    {
+      "id": "usr_owner",
+      "name": "Mission Owner",
+      "email": "owner@neuromancer.app",
+      "role": "owner",
+      "passwordHash": "scrypt$08b827bde090136fcfef0524169a1041$49d2f4ea28ea0df80bd109fe31523ee63b78c1400c660f572cbac1690fbaecc760a34af6b7e2d82958feca5656b70a93005ae86b3f185232554951ce1cd5d27d",
+      "createdAt": "2026-10-26T09:42:53.672Z"
+    }
+  ],
+  "sessions": [],
+  "settings": {
+    "workspaceName": "Neuromancer Mission Control",
+    "workspaceSlug": "neuromancer",
+    "timezone": "Asia/Jakarta",
+    "hermes": {
+      "enabled": false,
+      "baseUrl": "",
+      "apiKey": "",
+      "healthPath": "/health",
+      "chatPath": "/v1/chat",
+      "missionPath": "/v1/missions",
+      "fallbackLocal": true
+    },
+    "approvalPolicy": {
+      "missions": true,
+      "documents": true
+    }
+  },
+  "agents": [
+    {
+      "id": "agt_001",
+      "name": "Hermes",
+      "role": "Orchestrator",
+      "model": "hermes/orchestrator-v2",
+      "status": "active",
+      "skills": [
+        "prompt-engineering",
+        "qa-review",
+        "campaign-planning"
+      ],
+      "color": "#1F5FE0",
+      "direction": "Pecah misi menjadi langkah kecil, delegasikan ke agent yang tepat, dan jaga kualitas hasil akhir.",
+      "soul": "Kamu adalah Hermes, orkestrator tim agent. Kamu tidak menulis konten sendiri kecuali diminta; kamu mendelegasikan, memeriksa, dan menyatukan hasil. Selalu laporkan progres dalam bahasa manusia dan tandai risiko lebih awal.",
+      "identityApproved": true,
+      "photoFileId": null,
+      "memory": [
+        {
+          "id": "mem_0_1",
+          "at": "2026-10-20T09:15:00.000Z",
+          "text": "Preferensi kerja: Pecah misi menjadi langkah kecil, delegasikan ke agent yang tepat, dan jaga kualitas hasil akhir.",
+          "source": "seed"
+        },
+        {
+          "id": "mem_0_2",
+          "at": "2026-10-24T09:15:00.000Z",
+          "text": "Brand aktif terakhir: Kopi Nusantara.",
+          "source": "seed"
+        }
+      ],
+      "configYaml": "agent: hermes\nrole: Orchestrator\nmodel: hermes/orchestrator-v2\ntemperature: 0.4\nmax_steps: 12\ntools:\n  - search\n  - files\n  - docs\nmemory:\n  strategy: summarize\n  window: 20",
+      "lastTask": "Sinkronisasi kampanye Aurora Skin Q4",
+      "totalAssigned": 48,
+      "successRate": 94,
+      "createdAt": "2026-06-28T09:15:00.000Z",
+      "updatedAt": "2026-10-26T09:15:00.000Z"
+    },
+    {
+      "id": "agt_002",
+      "name": "Rani",
+      "role": "Researcher",
+      "model": "openai/gpt-5",
+      "status": "active",
+      "skills": [
+        "brand-research",
+        "web-scraping",
+        "data-viz"
+      ],
+      "color": "#5B9BF8",
+      "direction": "Validasi asumsi pasar dengan sumber primer, ringkas temuan dalam 5 poin, sertakan tautan bukti.",
+      "soul": "Kamu adalah Rani, peneliti. Kamu tidak berhalusinasi sumber. Jika data tidak tersedia, kamu menuliskan \"data belum ditemukan\" beserta cara mendapatkannya.",
+      "identityApproved": true,
+      "photoFileId": null,
+      "memory": [
+        {
+          "id": "mem_1_1",
+          "at": "2026-10-20T09:15:00.000Z",
+          "text": "Preferensi kerja: Validasi asumsi pasar dengan sumber primer, ringkas temuan dalam 5 poin, sertakan tautan bukti.",
+          "source": "seed"
+        },
+        {
+          "id": "mem_1_2",
+          "at": "2026-10-24T09:15:00.000Z",
+          "text": "Brand aktif terakhir: Aurora Skin.",
+          "source": "seed"
+        }
+      ],
+      "configYaml": "agent: rani\nrole: Researcher\nmodel: openai/gpt-5\ntemperature: 0.4\nmax_steps: 12\ntools:\n  - search\n  - files\n  - docs\nmemory:\n  strategy: summarize\n  window: 20",
+      "lastTask": "Riset persona Kopi Nusantara",
+      "totalAssigned": 31,
+      "successRate": 96,
+      "createdAt": "2026-07-02T09:15:00.000Z",
+      "updatedAt": "2026-10-25T09:15:00.000Z"
+    },
+    {
+      "id": "agt_003",
+      "name": "Bima",
+      "role": "Content Writer",
+      "model": "anthropic/claude-sonnet-4.5",
+      "status": "active",
+      "skills": [
+        "seo-writing",
+        "campaign-planning"
+      ],
+      "color": "#8A6CF6",
+      "direction": "Tulis dengan voice tone brand, panjang 600–900 kata, satu CTA utama per artikel.",
+      "soul": "Kamu adalah Bima, penulis konten. Gaya tulisan mengikuti Brand DNA yang diberikan dan tidak menambahkan klaim yang tidak ada di brief.",
+      "identityApproved": true,
+      "photoFileId": null,
+      "memory": [
+        {
+          "id": "mem_2_1",
+          "at": "2026-10-20T09:15:00.000Z",
+          "text": "Preferensi kerja: Tulis dengan voice tone brand, panjang 600–900 kata, satu CTA utama per artikel.",
+          "source": "seed"
+        },
+        {
+          "id": "mem_2_2",
+          "at": "2026-10-24T09:15:00.000Z",
+          "text": "Brand aktif terakhir: Kopi Nusantara.",
+          "source": "seed"
+        }
+      ],
+      "configYaml": "agent: bima\nrole: Content Writer\nmodel: anthropic/claude-sonnet-4.5\ntemperature: 0.4\nmax_steps: 12\ntools:\n  - search\n  - files\n  - docs\nmemory:\n  strategy: summarize\n  window: 20",
+      "lastTask": "Artikel \"Ritual Pagi Nusantara\"",
+      "totalAssigned": 57,
+      "successRate": 91,
+      "createdAt": "2026-07-06T09:15:00.000Z",
+      "updatedAt": "2026-10-26T09:15:00.000Z"
+    },
+    {
+      "id": "agt_004",
+      "name": "Sena",
+      "role": "Designer",
+      "model": "google/gemini-2.5-pro",
+      "status": "active",
+      "skills": [
+        "brand-research",
+        "data-viz"
+      ],
+      "color": "#E4739B",
+      "direction": "Buat moodboard, palet, dan tipografi yang konsisten dengan archetype brand.",
+      "soul": "Kamu adalah Sena, desainer. Setiap keputusan visual harus bisa dijelaskan lewat Brand DNA dan aksesibilitas kontras.",
+      "identityApproved": true,
+      "photoFileId": null,
+      "memory": [
+        {
+          "id": "mem_3_1",
+          "at": "2026-10-20T09:15:00.000Z",
+          "text": "Preferensi kerja: Buat moodboard, palet, dan tipografi yang konsisten dengan archetype brand.",
+          "source": "seed"
+        },
+        {
+          "id": "mem_3_2",
+          "at": "2026-10-24T09:15:00.000Z",
+          "text": "Brand aktif terakhir: Aurora Skin.",
+          "source": "seed"
+        }
+      ],
+      "configYaml": "agent: sena\nrole: Designer\nmodel: google/gemini-2.5-pro\ntemperature: 0.4\nmax_steps: 12\ntools:\n  - search\n  - files\n  - docs\nmemory:\n  strategy: summarize\n  window: 20",
+      "lastTask": "Moodboard Aurora Skin",
+      "totalAssigned": 22,
+      "successRate": 89,
+      "createdAt": "2026-07-10T09:15:00.000Z",
+      "updatedAt": "2026-10-24T09:15:00.000Z"
+    },
+    {
+      "id": "agt_005",
+      "name": "Arya",
+      "role": "Developer",
+      "model": "meta/llama-4-70b",
+      "status": "active",
+      "skills": [
+        "prompt-engineering",
+        "qa-review"
+      ],
+      "color": "#2E9E8F",
+      "direction": "Implementasi kecil dan terukur, sertakan langkah verifikasi di setiap hasil.",
+      "soul": "Kamu adalah Arya, engineer. Kamu menulis kode yang bisa dijalankan, menyebut asumsi, dan tidak menandai pekerjaan selesai tanpa bukti uji.",
+      "identityApproved": true,
+      "photoFileId": null,
+      "memory": [
+        {
+          "id": "mem_4_1",
+          "at": "2026-10-20T09:15:00.000Z",
+          "text": "Preferensi kerja: Implementasi kecil dan terukur, sertakan langkah verifikasi di setiap hasil.",
+          "source": "seed"
+        },
+        {
+          "id": "mem_4_2",
+          "at": "2026-10-24T09:15:00.000Z",
+          "text": "Brand aktif terakhir: Kopi Nusantara.",
+          "source": "seed"
+        }
+      ],
+      "configYaml": "agent: arya\nrole: Developer\nmodel: meta/llama-4-70b\ntemperature: 0.4\nmax_steps: 12\ntools:\n  - search\n  - files\n  - docs\nmemory:\n  strategy: summarize\n  window: 20",
+      "lastTask": "Integrasi webhook Hermes",
+      "totalAssigned": 26,
+      "successRate": 97,
+      "createdAt": "2026-07-14T09:15:00.000Z",
+      "updatedAt": "2026-10-25T09:15:00.000Z"
+    },
+    {
+      "id": "agt_006",
+      "name": "Dita",
+      "role": "Marketing Strategist",
+      "model": "openai/gpt-5",
+      "status": "active",
+      "skills": [
+        "campaign-planning",
+        "seo-writing",
+        "lead-reply"
+      ],
+      "color": "#E39A3B",
+      "direction": "Susun rencana kampanye berbasis funnel, target CAC, dan kalender 4 minggu.",
+      "soul": "Kamu adalah Dita, strategist marketing. Rekomendasi harus punya metrik keberhasilan dan asumsi biaya yang eksplisit.",
+      "identityApproved": true,
+      "photoFileId": null,
+      "memory": [
+        {
+          "id": "mem_5_1",
+          "at": "2026-10-20T09:15:00.000Z",
+          "text": "Preferensi kerja: Susun rencana kampanye berbasis funnel, target CAC, dan kalender 4 minggu.",
+          "source": "seed"
+        },
+        {
+          "id": "mem_5_2",
+          "at": "2026-10-24T09:15:00.000Z",
+          "text": "Brand aktif terakhir: Aurora Skin.",
+          "source": "seed"
+        }
+      ],
+      "configYaml": "agent: dita\nrole: Marketing Strategist\nmodel: openai/gpt-5\ntemperature: 0.4\nmax_steps: 12\ntools:\n  - search\n  - files\n  - docs\nmemory:\n  strategy: summarize\n  window: 20",
+      "lastTask": "Kalender kampanye Nimbus Dev",
+      "totalAssigned": 39,
+      "successRate": 92,
+      "createdAt": "2026-07-18T09:15:00.000Z",
+      "updatedAt": "2026-10-23T09:15:00.000Z"
+    },
+    {
+      "id": "agt_007",
+      "name": "Nadia",
+      "role": "Data Analyst",
+      "model": "google/gemini-2.5-pro",
+      "status": "inactive",
+      "skills": [
+        "data-viz",
+        "qa-review"
+      ],
+      "color": "#6B7B95",
+      "direction": "Jawab pertanyaan dengan angka, tunjukkan periode data, dan sebutkan keterbatasan.",
+      "soul": "Kamu adalah Nadia, analis data. Tidak ada angka tanpa periode dan sumber.",
+      "identityApproved": true,
+      "photoFileId": null,
+      "memory": [
+        {
+          "id": "mem_6_1",
+          "at": "2026-10-20T09:15:00.000Z",
+          "text": "Preferensi kerja: Jawab pertanyaan dengan angka, tunjukkan periode data, dan sebutkan keterbatasan.",
+          "source": "seed"
+        },
+        {
+          "id": "mem_6_2",
+          "at": "2026-10-24T09:15:00.000Z",
+          "text": "Brand aktif terakhir: Kopi Nusantara.",
+          "source": "seed"
+        }
+      ],
+      "configYaml": "agent: nadia\nrole: Data Analyst\nmodel: google/gemini-2.5-pro\ntemperature: 0.4\nmax_steps: 12\ntools:\n  - search\n  - files\n  - docs\nmemory:\n  strategy: summarize\n  window: 20",
+      "lastTask": "Laporan retensi 30 hari",
+      "totalAssigned": 18,
+      "successRate": 95,
+      "createdAt": "2026-07-22T09:15:00.000Z",
+      "updatedAt": "2026-10-05T09:15:00.000Z"
+    },
+    {
+      "id": "agt_008",
+      "name": "Yusuf",
+      "role": "Sales",
+      "model": "openai/gpt-5-mini",
+      "status": "inactive",
+      "skills": [
+        "lead-reply"
+      ],
+      "color": "#9AA6BC",
+      "direction": "Kualifikasi lead dengan 3 pertanyaan, ajukan demo hanya jika budget jelas.",
+      "soul": "Kamu adalah Yusuf, sales. Nada bicara membantu, tidak memaksa, dan selalu menutup dengan langkah berikutnya.",
+      "identityApproved": true,
+      "photoFileId": null,
+      "memory": [
+        {
+          "id": "mem_7_1",
+          "at": "2026-10-20T09:15:00.000Z",
+          "text": "Preferensi kerja: Kualifikasi lead dengan 3 pertanyaan, ajukan demo hanya jika budget jelas.",
+          "source": "seed"
+        },
+        {
+          "id": "mem_7_2",
+          "at": "2026-10-24T09:15:00.000Z",
+          "text": "Brand aktif terakhir: Aurora Skin.",
+          "source": "seed"
+        }
+      ],
+      "configYaml": "agent: yusuf\nrole: Sales\nmodel: openai/gpt-5-mini\ntemperature: 0.4\nmax_steps: 12\ntools:\n  - search\n  - files\n  - docs\nmemory:\n  strategy: summarize\n  window: 20",
+      "lastTask": "Follow-up 12 lead inboound",
+      "totalAssigned": 12,
+      "successRate": 83,
+      "createdAt": "2026-07-26T09:15:00.000Z",
+      "updatedAt": "2026-09-22T09:15:00.000Z"
+    }
+  ],
+  "skills": [
+    {
+      "id": "skl_001",
+      "name": "brand-research",
+      "category": "Research",
+      "description": "Riset identitas brand dari tautan/katalog dan menyusun draf Brand DNA.",
+      "builtin": true,
+      "createdAt": "2026-08-27T09:15:00.000Z"
+    },
+    {
+      "id": "skl_002",
+      "name": "seo-writing",
+      "category": "Content",
+      "description": "Menulis artikel panjang dengan struktur SEO dan satu CTA utama.",
+      "builtin": true,
+      "createdAt": "2026-08-27T09:15:00.000Z"
+    },
+    {
+      "id": "skl_003",
+      "name": "campaign-planning",
+      "category": "Marketing",
+      "description": "Menyusun rencana kampanye 4 minggu beserta metrik dan asumsi biaya.",
+      "builtin": true,
+      "createdAt": "2026-08-27T09:15:00.000Z"
+    },
+    {
+      "id": "skl_004",
+      "name": "data-viz",
+      "category": "Analytics",
+      "description": "Mengubah data mentah menjadi ringkasan visual dan tabel yang mudah dibaca.",
+      "builtin": true,
+      "createdAt": "2026-08-27T09:15:00.000Z"
+    },
+    {
+      "id": "skl_005",
+      "name": "qa-review",
+      "category": "Quality",
+      "description": "Memeriksa hasil agent terhadap brief, tone brand, dan batasan misi.",
+      "builtin": true,
+      "createdAt": "2026-08-27T09:15:00.000Z"
+    },
+    {
+      "id": "skl_006",
+      "name": "lead-reply",
+      "category": "Sales",
+      "description": "Membalas lead masuk dengan kualifikasi singkat dan langkah lanjutan.",
+      "builtin": true,
+      "createdAt": "2026-08-27T09:15:00.000Z"
+    },
+    {
+      "id": "skl_007",
+      "name": "web-scraping",
+      "category": "Research",
+      "description": "Mengambil data publik dari halaman referensi secara terstruktur.",
+      "builtin": true,
+      "createdAt": "2026-08-27T09:15:00.000Z"
+    },
+    {
+      "id": "skl_008",
+      "name": "prompt-engineering",
+      "category": "Engineering",
+      "description": "Menyusun instruksi agent yang dapat diuji dan diulang.",
+      "builtin": true,
+      "createdAt": "2026-08-27T09:15:00.000Z"
+    }
+  ],
+  "brands": [
+    {
+      "id": "brd_001",
+      "name": "Kopi Nusantara",
+      "references": [
+        {
+          "id": "ref_001",
+          "type": "link",
+          "url": "https://kopinusantara.example.com",
+          "label": "Situs resmi",
+          "addedAt": "2026-09-16T09:15:00.000Z"
+        },
+        {
+          "id": "ref_002",
+          "type": "link",
+          "url": "https://instagram.com/kopinusantara",
+          "label": "Instagram",
+          "addedAt": "2026-09-16T09:15:00.000Z"
+        },
+        {
+          "id": "ref_003",
+          "type": "file",
+          "fileId": "fil_001",
+          "label": "Katalog biji kopi 2026.pdf",
+          "addedAt": "2026-09-17T09:15:00.000Z"
+        }
+      ],
+      "dna": {
+        "brandName": "Kopi Nusantara",
+        "archetype": "The Caregiver",
+        "description": "Kedai kopi specialty yang merawat petani lokal dan ritual seduh lambat untuk penikmat kota.",
+        "typography": "Fraunces (display) + Inter (body)",
+        "palette": [
+          {
+            "name": "Cobalt",
+            "hex": "#1F5FE0"
+          },
+          {
+            "name": "Ivory",
+            "hex": "#F7F4EE"
+          },
+          {
+            "name": "Charcoal",
+            "hex": "#22262E"
+          },
+          {
+            "name": "Clay",
+            "hex": "#C77B4E"
+          }
+        ],
+        "voiceTone": "Hangat, tenang, tidak menggurui; pakai kata kerja konkret.",
+        "keyMessage": "Kopi yang tumbuh pelan, diseduh dengan sabar.",
+        "statement": "Kami menghubungkan petani dataran tinggi dengan ritual pagi orang kota, satu cangkir setiap hari.",
+        "niche": "Kopi specialty",
+        "specificNiche": "Single origin Indonesia",
+        "superSpecificNiche": "Arabika Gayo proses natural untuk manual brew",
+        "positioning": "Satu-satunya kedai yang menampilkan nama petani di setiap kemasan."
+      },
+      "personas": [
+        {
+          "id": "per_001",
+          "name": "Ritualis Pagi",
+          "age": "27–35",
+          "role": "Karyawan kreatif di kota besar",
+          "goals": "Ritual seduh 10 menit yang konsisten sebelum bekerja.",
+          "painPoints": "Bingung memilih beans; takut rasanya terlalu asam.",
+          "channels": "Instagram, newsletter"
+        },
+        {
+          "id": "per_002",
+          "name": "Pencari Cerita",
+          "age": "30–45",
+          "role": "Pemilik kafe kecil",
+          "goals": "Menu with cerita asal-usul untuk pelanggan.",
+          "painPoints": "Supplier tidak transparan soal harga petani.",
+          "channels": "WhatsApp, kunjungan langsung"
+        },
+        {
+          "id": "per_003",
+          "name": "Pemberi Hadiah",
+          "age": "25–40",
+          "role": "Profesional yang mencari hampers",
+          "goals": "Hadiah kopi yang terlihat personal dan rapi.",
+          "painPoints": "Kemasan terlihat generik.",
+          "channels": "Marketplace, Instagram"
+        }
+      ],
+      "products": [
+        {
+          "id": "prd_001",
+          "name": "Gayo Natural 200g",
+          "category": "Biji kopi",
+          "field": "Single origin",
+          "reference": "https://kopinusantara.example.com/gayo"
+        },
+        {
+          "id": "prd_002",
+          "name": "Hampers Ritual Pagi",
+          "category": "Paket hadiah",
+          "field": "Retail",
+          "reference": "Katalog 2026 hal. 12"
+        }
+      ],
+      "researchStatus": "ready",
+      "researchNote": "Draf disusun Rani dari 3 referensi pada 40 hari lalu.",
+      "createdAt": "2026-09-15T09:15:00.000Z",
+      "updatedAt": "2026-10-14T09:15:00.000Z"
+    },
+    {
+      "id": "brd_002",
+      "name": "Aurora Skin",
+      "references": [
+        {
+          "id": "ref_004",
+          "type": "link",
+          "url": "https://auroraskin.example.com",
+          "label": "Situs resmi",
+          "addedAt": "2026-09-26T09:15:00.000Z"
+        },
+        {
+          "id": "ref_005",
+          "type": "file",
+          "fileId": "fil_002",
+          "label": "Brand deck Aurora.pdf",
+          "addedAt": "2026-09-27T09:15:00.000Z"
+        }
+      ],
+      "dna": {
+        "brandName": "Aurora Skin",
+        "archetype": "The Sage",
+        "description": "Skincare berbasis bahan aktif dengan penjelasan ilmiah yang mudah dicerna.",
+        "typography": "Satoshi (display) + Source Serif (body)",
+        "palette": [
+          {
+            "name": "Mist",
+            "hex": "#DCE3EF"
+          },
+          {
+            "name": "Sky",
+            "hex": "#5B9BF8"
+          },
+          {
+            "name": "Ivory",
+            "hex": "#F9F7F2"
+          }
+        ],
+        "voiceTone": "Jelas, berbasis bukti, tanpa klaim berlebihan.",
+        "keyMessage": "Kulitmu layak mendapat penjelasan, bukan janji.",
+        "statement": "Setiap formula dijelaskan bahan aktif, kadar, dan bukti ujinya.",
+        "niche": "Skincare",
+        "specificNiche": "Skin barrier",
+        "superSpecificNiche": "Ceramide untuk kulit sensitif iklim tropis",
+        "positioning": "Skincare transparan dengan daftar kadar aktif di depan kemasan."
+      },
+      "personas": [
+        {
+          "id": "per_004",
+          "name": "Analitis",
+          "age": "24–34",
+          "role": "Pekerja kantoran dengan kulit sensitif",
+          "goals": "Rutinitas 3 langkah yang tidak memicu iritasi.",
+          "painPoints": "Klaim marketing berlebihan; takut breakout.",
+          "channels": "TikTok, review marketplace"
+        },
+        {
+          "id": "per_005",
+          "name": "Ibu Praktis",
+          "age": "32–45",
+          "role": "Ibu dengan waktu terbatas",
+          "goals": "Produk aman untuk seluruh keluarga.",
+          "painPoints": "Terlalu banyak langkah dan produk.",
+          "channels": "WhatsApp, Facebook"
+        },
+        {
+          "id": "per_006",
+          "name": "Barrier Seeker",
+          "age": "20–28",
+          "role": "Mahasiswa pengguna retinol",
+          "goals": "Memulihkan skin barrier setelah eksfoliasi.",
+          "painPoints": "Bingung urutan pemakaian.",
+          "channels": "TikTok, Discord"
+        }
+      ],
+      "products": [
+        {
+          "id": "prd_003",
+          "name": "Barrier Serum 5% Ceramide",
+          "category": "Serum",
+          "field": "Skincare",
+          "reference": "https://auroraskin.example.com/serum"
+        }
+      ],
+      "researchStatus": "ready",
+      "researchNote": "Draf disusun Sena dari brand deck.",
+      "createdAt": "2026-09-25T09:15:00.000Z",
+      "updatedAt": "2026-10-21T09:15:00.000Z"
+    },
+    {
+      "id": "brd_003",
+      "name": "Nimbus Dev",
+      "references": [
+        {
+          "id": "ref_006",
+          "type": "link",
+          "url": "https://nimbus.example.dev",
+          "label": "Dokumentasi produk",
+          "addedAt": "2026-10-17T09:15:00.000Z"
+        }
+      ],
+      "dna": {
+        "brandName": "Nimbus Dev",
+        "archetype": "The Creator",
+        "description": "Alat deployment untuk tim kecil yang ingin rilis tanpa drama.",
+        "typography": "Inter (semua)",
+        "palette": [
+          {
+            "name": "Charcoal",
+            "hex": "#22262E"
+          },
+          {
+            "name": "Cobalt",
+            "hex": "#1F5FE0"
+          },
+          {
+            "name": "Mint",
+            "hex": "#3FC1A0"
+          }
+        ],
+        "voiceTone": "Ringkas, teknis, sedikit jenaka.",
+        "keyMessage": "Rilis Jumat sore pun aman.",
+        "statement": "Pipeline yang bisa dibaca manusia, bukan kotak hitam.",
+        "niche": "Developer tools",
+        "specificNiche": "Deployment",
+        "superSpecificNiche": "Preview environment untuk tim 3–15 orang",
+        "positioning": "Deploy tanpa konfigurasi YAML yang tidak perlu."
+      },
+      "personas": [
+        {
+          "id": "per_007",
+          "name": "Tech Lead Kecil",
+          "age": "28–38",
+          "role": "Memimpin tim 6 engineer",
+          "goals": "Preview per PR tanpa biaya berlebih.",
+          "painPoints": "Setup CI rumit dan mahal.",
+          "channels": "GitHub, newsletter developer"
+        },
+        {
+          "id": "per_008",
+          "name": "Solo Founder",
+          "age": "23–35",
+          "role": "Membangun produk sendirian",
+          "goals": "Rilis cepat tanpa perlu DevOps.",
+          "painPoints": "Tidak punya waktu memelihara server.",
+          "channels": "X/Twitter, Discord"
+        }
+      ],
+      "products": [
+        {
+          "id": "prd_004",
+          "name": "Nimbus Preview",
+          "category": "SaaS",
+          "field": "Deployment",
+          "reference": "https://nimbus.example.dev/pricing"
+        }
+      ],
+      "researchStatus": "draft",
+      "researchNote": "Baru 1 referensi, DNA masih draf awal.",
+      "createdAt": "2026-10-17T09:15:00.000Z",
+      "updatedAt": "2026-10-17T09:15:00.000Z"
+    }
+  ],
+  "missions": [
+    {
+      "id": "msn_001",
+      "name": "Riset Persona Kopi Nusantara",
+      "goals": "Validasi 3 persona dari data penjualan 6 bulan dan 20 ulasan marketplace. Hasilkan ringkasan 5 poin + rekomendasi pesan kampanye.",
+      "agentId": "agt_002",
+      "priority": "high",
+      "timeLimitMinutes": 45,
+      "maxSteps": 8,
+      "notesQc": "Sertakan sumber tiap klaim dan periode data.",
+      "status": "completed",
+      "createdAt": "2026-10-12T09:15:00.000Z",
+      "updatedAt": "2026-10-14T09:15:00.000Z",
+      "tokens": 42800,
+      "resultDocId": "doc_001",
+      "timeline": [
+        {
+          "at": "2026-10-12T09:15:00.000Z",
+          "label": "Misi dibuat (draf)",
+          "by": "owner"
+        },
+        {
+          "at": "2026-10-12T09:15:00.000Z",
+          "label": "Diajukan untuk review",
+          "by": "owner"
+        },
+        {
+          "at": "2026-10-13T09:15:00.000Z",
+          "label": "Disetujui dan diluncurkan",
+          "by": "owner"
+        },
+        {
+          "at": "2026-10-14T09:15:00.000Z",
+          "label": "Hasil masuk ke Docs",
+          "by": "Rani"
+        }
+      ]
+    },
+    {
+      "id": "msn_002",
+      "name": "Artikel Ritual Pagi Nusantara",
+      "goals": "Tulis artikel 800 kata tentang ritual seduh pagi, tone hangat, satu CTA ke hampers.",
+      "agentId": "agt_003",
+      "priority": "medium",
+      "timeLimitMinutes": 30,
+      "maxSteps": 6,
+      "notesQc": "Jangan pakai klaim kesehatan. Cek ejaan nama petani.",
+      "status": "pending_review",
+      "createdAt": "2026-10-23T09:15:00.000Z",
+      "updatedAt": "2026-10-24T09:15:00.000Z",
+      "tokens": 12600,
+      "resultDocId": null,
+      "timeline": [
+        {
+          "at": "2026-10-23T09:15:00.000Z",
+          "label": "Misi dibuat (draf)",
+          "by": "owner"
+        },
+        {
+          "at": "2026-10-24T09:15:00.000Z",
+          "label": "Diajukan untuk review",
+          "by": "owner"
+        }
+      ]
+    },
+    {
+      "id": "msn_003",
+      "name": "Kalender Kampanye Aurora Q4",
+      "goals": "Susun kalender kampanye 4 minggu untuk Barrier Serum: 3 konten edukasi, 2 testimoni, 1 promo. Sertakan metrik dan asumsi biaya.",
+      "agentId": "agt_006",
+      "priority": "high",
+      "timeLimitMinutes": 60,
+      "maxSteps": 10,
+      "notesQc": "Setiap minggu harus punya satu metrik keberhasilan.",
+      "status": "pending_review",
+      "createdAt": "2026-10-24T09:15:00.000Z",
+      "updatedAt": "2026-10-25T09:15:00.000Z",
+      "tokens": 21400,
+      "resultDocId": null,
+      "timeline": [
+        {
+          "at": "2026-10-24T09:15:00.000Z",
+          "label": "Misi dibuat (draf)",
+          "by": "owner"
+        },
+        {
+          "at": "2026-10-25T09:15:00.000Z",
+          "label": "Diajukan untuk review",
+          "by": "owner"
+        }
+      ]
+    },
+    {
+      "id": "msn_004",
+      "name": "Audit Landing Page Nimbus",
+      "goals": "Audit 1 halaman pricing: hierarki pesan, kontras, dan kejelasan CTA. Beri 7 rekomendasi berurutan dampak.",
+      "agentId": "agt_005",
+      "priority": "urgent",
+      "timeLimitMinutes": 25,
+      "maxSteps": 5,
+      "notesQc": "Fokus pada aksesibilitas dan kejelasan harga.",
+      "status": "running",
+      "createdAt": "2026-10-25T09:15:00.000Z",
+      "updatedAt": "2026-10-26T09:15:00.000Z",
+      "tokens": 8900,
+      "resultDocId": null,
+      "timeline": [
+        {
+          "at": "2026-10-25T09:15:00.000Z",
+          "label": "Misi dibuat (draf)",
+          "by": "owner"
+        },
+        {
+          "at": "2026-10-25T09:15:00.000Z",
+          "label": "Diajukan untuk review",
+          "by": "owner"
+        },
+        {
+          "at": "2026-10-25T09:15:00.000Z",
+          "label": "Disetujui dan diluncurkan",
+          "by": "owner"
+        },
+        {
+          "at": "2026-10-26T09:15:00.000Z",
+          "label": "Hermes mendispatch ke Arya",
+          "by": "Hermes"
+        }
+      ]
+    },
+    {
+      "id": "msn_005",
+      "name": "Moodboard Kemasan Hampers",
+      "goals": "Buat arahan visual kemasan hampers: 2 opsi palet, referensi material, dan tipografi.",
+      "agentId": "agt_004",
+      "priority": "medium",
+      "timeLimitMinutes": 40,
+      "maxSteps": 7,
+      "notesQc": "Gunakan palet brand, jangan menambah warna baru.",
+      "status": "approved",
+      "createdAt": "2026-10-22T09:15:00.000Z",
+      "updatedAt": "2026-10-24T09:15:00.000Z",
+      "tokens": 5400,
+      "resultDocId": null,
+      "timeline": [
+        {
+          "at": "2026-10-22T09:15:00.000Z",
+          "label": "Misi dibuat (draf)",
+          "by": "owner"
+        },
+        {
+          "at": "2026-10-23T09:15:00.000Z",
+          "label": "Diajukan untuk review",
+          "by": "owner"
+        },
+        {
+          "at": "2026-10-24T09:15:00.000Z",
+          "label": "Disetujui, menunggu peluncuran",
+          "by": "owner"
+        }
+      ]
+    },
+    {
+      "id": "msn_006",
+      "name": "Riset Kompetitor Skincare Tropis",
+      "goals": "Petakan 5 kompetitor, rentang harga, dan klaim utama. Identifikasi 2 celah positioning.",
+      "agentId": "agt_002",
+      "priority": "low",
+      "timeLimitMinutes": 50,
+      "maxSteps": 9,
+      "notesQc": "Sertakan tanggal akses.",
+      "status": "draft",
+      "createdAt": "2026-10-26T08:15:00.000Z",
+      "updatedAt": "2026-10-26T08:15:00.000Z",
+      "tokens": 0,
+      "resultDocId": null,
+      "timeline": [
+        {
+          "at": "2026-10-26T08:15:00.000Z",
+          "label": "Misi dibuat (draf)",
+          "by": "owner"
+        }
+      ]
+    },
+    {
+      "id": "msn_007",
+      "name": "Balas 12 Lead Inbound",
+      "goals": "Kualifikasi 12 lead masuk dengan 3 pertanyaan dan rekomendasikan jadwal demo.",
+      "agentId": "agt_008",
+      "priority": "low",
+      "timeLimitMinutes": 20,
+      "maxSteps": 4,
+      "notesQc": "Jangan menjanjikan diskon.",
+      "status": "cancelled",
+      "createdAt": "2026-10-18T09:15:00.000Z",
+      "updatedAt": "2026-10-19T09:15:00.000Z",
+      "replanNote": "Ditunda karena inbox POP belum terhubung.",
+      "tokens": 0,
+      "resultDocId": null,
+      "timeline": [
+        {
+          "at": "2026-10-18T09:15:00.000Z",
+          "label": "Misi dibuat (draf)",
+          "by": "owner"
+        },
+        {
+          "at": "2026-10-19T09:15:00.000Z",
+          "label": "Dibatalkan: butuh integrasi mail",
+          "by": "owner"
+        }
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "tsk_001",
+      "title": "Riset Persona Kopi Nusantara",
+      "description": "Validasi 3 persona dari data penjualan 6 bulan dan 20 ulasan marketplace.",
+      "priority": "high",
+      "status": "done",
+      "missionId": "msn_001",
+      "assigneeAgentId": "agt_002",
+      "source": "mission",
+      "createdAt": "2026-10-12T09:15:00.000Z",
+      "updatedAt": "2026-10-14T09:15:00.000Z"
+    },
+    {
+      "id": "tsk_002",
+      "title": "Artikel Ritual Pagi Nusantara",
+      "description": "Tulis artikel 800 kata tentang ritual seduh pagi, tone hangat, satu CTA.",
+      "priority": "medium",
+      "status": "review",
+      "missionId": "msn_002",
+      "assigneeAgentId": "agt_003",
+      "source": "mission",
+      "createdAt": "2026-10-23T09:15:00.000Z",
+      "updatedAt": "2026-10-24T09:15:00.000Z"
+    },
+    {
+      "id": "tsk_003",
+      "title": "Kalender Kampanye Aurora Q4",
+      "description": "Susun kalender 4 minggu + metrik keberhasilan dan asumsi biaya.",
+      "priority": "high",
+      "status": "review",
+      "missionId": "msn_003",
+      "assigneeAgentId": "agt_006",
+      "source": "mission",
+      "createdAt": "2026-10-24T09:15:00.000Z",
+      "updatedAt": "2026-10-25T09:15:00.000Z"
+    },
+    {
+      "id": "tsk_004",
+      "title": "Audit Landing Page Nimbus",
+      "description": "Audit halaman pricing: hierarki pesan, kontras, dan kejelasan CTA.",
+      "priority": "urgent",
+      "status": "in_progress",
+      "missionId": "msn_004",
+      "assigneeAgentId": "agt_005",
+      "source": "mission",
+      "createdAt": "2026-10-25T09:15:00.000Z",
+      "updatedAt": "2026-10-26T09:15:00.000Z"
+    },
+    {
+      "id": "tsk_005",
+      "title": "Moodboard Kemasan Hampers",
+      "description": "2 opsi palet, referensi material, tipografi.",
+      "priority": "medium",
+      "status": "todo",
+      "missionId": "msn_005",
+      "assigneeAgentId": "agt_004",
+      "source": "mission",
+      "createdAt": "2026-10-22T09:15:00.000Z",
+      "updatedAt": "2026-10-24T09:15:00.000Z"
+    },
+    {
+      "id": "tsk_006",
+      "title": "Perbarui config.yaml agent Hermes",
+      "description": "Naikkan max_steps ke 12 dan tambahkan tool docs.",
+      "priority": "low",
+      "status": "todo",
+      "missionId": null,
+      "assigneeAgentId": "agt_001",
+      "source": "manual",
+      "createdAt": "2026-10-21T09:15:00.000Z",
+      "updatedAt": "2026-10-21T09:15:00.000Z"
+    },
+    {
+      "id": "tsk_007",
+      "title": "Cek ejaan 3 artikel terakhir",
+      "description": "QC manual sebelum publish ke Docs.",
+      "priority": "medium",
+      "status": "in_progress",
+      "missionId": null,
+      "assigneeAgentId": "agt_001",
+      "source": "manual",
+      "createdAt": "2026-10-22T09:15:00.000Z",
+      "updatedAt": "2026-10-25T09:15:00.000Z"
+    },
+    {
+      "id": "tsk_008",
+      "title": "Riset Kompetitor Skincare Tropis",
+      "description": "Petakan 5 kompetitor dan 2 celah positioning.",
+      "priority": "low",
+      "status": "todo",
+      "missionId": "msn_006",
+      "assigneeAgentId": "agt_002",
+      "source": "mission",
+      "createdAt": "2026-10-26T08:15:00.000Z",
+      "updatedAt": "2026-10-26T08:15:00.000Z"
+    },
+    {
+      "id": "tsk_009",
+      "title": "Arsipkan aset kampanye 2025",
+      "description": "Pindahkan ke folder arsip dan catat tautan.",
+      "priority": "low",
+      "status": "done",
+      "missionId": null,
+      "assigneeAgentId": "agt_001",
+      "source": "manual",
+      "createdAt": "2026-10-06T09:15:00.000Z",
+      "updatedAt": "2026-10-11T09:15:00.000Z"
+    }
+  ],
+  "docs": [
+    {
+      "id": "doc_001",
+      "missionId": "msn_001",
+      "title": "Ringkasan Persona Kopi Nusantara",
+      "type": "agent",
+      "agentId": "agt_002",
+      "content": "# Ringkasan Persona Kopi Nusantara\n\nSumber: 6 bulan transaksi (Jan–Jun 2026) + 20 ulasan marketplace.\n\n## 5 poin utama\n1. 62% pembelian ulang berasal dari pelanggan yang menyeduh manual di rumah.\n2. Kata \"ritual\" muncul di 14 dari 20 ulasan positif.\n3. Keluhan terbanyak: kemasan tidak menyebut tanggal roasting (9 ulasan).\n4. Segmen hampers tumbuh 18% pada kuartal terakhir.\n5. Nama petani pada kemasan meningkatkan kepercayaan (7 ulasan menyebut eksplisit).\n\n## Rekomendasi pesan\n- Utamakan \"roasting date\" dan nama petani di halaman produk.\n- Gunakan frasa ritual 10 menit, bukan klaim rasa yang abstrak.\n\n## Batasan data\nData marketplace hanya mencakup 1 kanal; data kedai langsung belum tersedia.",
+      "createdAt": "2026-10-14T09:15:00.000Z"
+    },
+    {
+      "id": "doc_002",
+      "missionId": "msn_001",
+      "title": "Katalog Biji Kopi 2026 (referensi)",
+      "type": "upload",
+      "agentId": null,
+      "fileId": "fil_001",
+      "content": "Berkas referensi brand: Katalog Biji Kopi 2026.pdf",
+      "createdAt": "2026-09-17T09:15:00.000Z"
+    },
+    {
+      "id": "doc_003",
+      "missionId": "msn_003",
+      "title": "Draf Kalender Kampanye Aurora Q4",
+      "type": "agent",
+      "agentId": "agt_006",
+      "content": "# Kalender Kampanye Aurora Q4\n\n## Minggu 1 — Edukasi barrier\n- Konten: \"Kenapa ceramide butuh 4 minggu\"\n- Metrik: waktu baca > 90 detik\n\n## Minggu 2 — Bukti\n- Konten: hasil uji 28 hari (grafik)\n- Metrik: simpan produk +12%\n\n## Minggu 3 — Testimoni\n- 2 testimoni pengguna retinol\n- Metrik: rasio klik ke halaman produk > 4%\n\n## Minggu 4 — Promo\n- Bundling serum + cleanser\n- Metrik: konversi > 2,5%\n\n## Asumsi biaya\nIklan Rp6.000.000/bulan, CAC target Rp85.000, AOV Rp210.000.",
+      "createdAt": "2026-10-25T09:15:00.000Z"
+    },
+    {
+      "id": "doc_004",
+      "missionId": "msn_002",
+      "title": "Draf artikel Ritual Pagi (belum disetujui)",
+      "type": "agent",
+      "agentId": "agt_003",
+      "content": "# Ritual Pagi yang Tidak Terburu-buru\n\nPagi di kota sering dimulai dengan notifikasi. Sebelum itu, ada sepuluh menit yang bisa kita selamatkan: mendidihkan air, menimbang 15 gram biji, dan menuang pelan.\n\n(Isi artikel 800 kata menunggu persetujuan QC. Bagian CTA: Hampers Ritual Pagi.)",
+      "createdAt": "2026-10-24T09:15:00.000Z"
+    },
+    {
+      "id": "doc_005",
+      "missionId": null,
+      "title": "SOP Review Hasil Agent",
+      "type": "upload",
+      "agentId": null,
+      "fileId": "fil_003",
+      "content": "Berkas referensi internal: SOP Review Hasil Agent.docx",
+      "createdAt": "2026-10-04T09:15:00.000Z"
+    },
+    {
+      "id": "doc_006",
+      "missionId": "msn_004",
+      "title": "Audit Landing Page Nimbus (proses)",
+      "type": "agent",
+      "agentId": "agt_005",
+      "content": "# Audit Landing Page Nimbus\n\nStatus: 3 dari 5 langkah.\n\nTemuan awal:\n1. Harga tahunan tidak menampilkan penghematan.\n2. CTA sekunder bersaing secara visual dengan CTA utama.\n3. Kontras teks abu-abu pada latar terang di bawah 4.5:1.",
+      "createdAt": "2026-10-26T09:15:00.000Z"
+    }
+  ],
+  "files": [
+    {
+      "id": "fil_001",
+      "name": "Katalog Biji Kopi 2026.pdf",
+      "mime": "application/pdf",
+      "size": 482133,
+      "storedName": null,
+      "kind": "reference",
+      "createdAt": "2026-09-17T09:15:00.000Z",
+      "placeholder": true
+    },
+    {
+      "id": "fil_002",
+      "name": "Brand deck Aurora.pdf",
+      "mime": "application/pdf",
+      "size": 1288442,
+      "storedName": null,
+      "kind": "reference",
+      "createdAt": "2026-09-27T09:15:00.000Z",
+      "placeholder": true
+    },
+    {
+      "id": "fil_003",
+      "name": "SOP Review Hasil Agent.docx",
+      "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "size": 45602,
+      "storedName": null,
+      "kind": "upload",
+      "createdAt": "2026-10-04T09:15:00.000Z",
+      "placeholder": true
+    }
+  ],
+  "chats": [
+    {
+      "id": "cht_001",
+      "agentId": "agt_002",
+      "title": "Persona Kopi Nusantara",
+      "createdAt": "2026-10-13T09:15:00.000Z",
+      "updatedAt": "2026-10-14T09:15:00.000Z",
+      "messages": [
+        {
+          "id": "msg_001",
+          "role": "user",
+          "text": "Ringkas temuan persona dalam 3 poin.",
+          "at": "2026-10-13T09:15:00.000Z"
+        },
+        {
+          "id": "msg_002",
+          "role": "agent",
+          "text": "Tiga poin: (1) ritual menyeduh adalah pemicu utama pembelian ulang; (2) tanggal roasting paling sering diminta; (3) segmen hampers tumbuh 18%. Detail ada di Docs \"Ringkasan Persona Kopi Nusantara\".",
+          "at": "2026-10-13T09:15:00.000Z"
+        },
+        {
+          "id": "msg_003",
+          "role": "user",
+          "text": "Siapkan pertanyaan lanjutan untuk QC.",
+          "at": "2026-10-14T09:15:00.000Z"
+        },
+        {
+          "id": "msg_004",
+          "role": "agent",
+          "text": "Pertanyaan QC: Apakah klaim 62% sudah diverifikasi pada data kanal kedai? Apakah frasa \"ritual\" dipakai konsisten di semua aset? Apakah tanggal roasting dicantumkan di kemasan baru?",
+          "at": "2026-10-14T09:15:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "cht_002",
+      "agentId": "agt_001",
+      "title": "Dispatch misi minggu ini",
+      "createdAt": "2026-10-25T09:15:00.000Z",
+      "updatedAt": "2026-10-25T09:15:00.000Z",
+      "messages": [
+        {
+          "id": "msg_005",
+          "role": "user",
+          "text": "Misi mana yang perlu saya setujui?",
+          "at": "2026-10-25T09:15:00.000Z"
+        },
+        {
+          "id": "msg_006",
+          "role": "agent",
+          "text": "Ada 2 misi menunggu persetujuan: Artikel Ritual Pagi Nusantara (Bima) dan Kalender Kampanye Aurora Q4 (Dita). Prioritas tertinggi: Aurora Q4 karena tenggat kampanye 4 minggu.",
+          "at": "2026-10-25T09:15:00.000Z"
+        }
+      ]
+    },
+    {
+      "id": "cht_003",
+      "agentId": "agt_005",
+      "title": "Audit halaman pricing",
+      "createdAt": "2026-10-26T09:15:00.000Z",
+      "updatedAt": "2026-10-26T09:15:00.000Z",
+      "messages": [
+        {
+          "id": "msg_007",
+          "role": "user",
+          "text": "Fokus ke aksesibilitas dulu.",
+          "at": "2026-10-26T09:15:00.000Z"
+        },
+        {
+          "id": "msg_008",
+          "role": "agent",
+          "text": "Baik. Saya mulai dari kontras teks dan ukuran target sentuh, lalu hierarki CTA. Hasil akan saya tulis di Docs setelah approval.",
+          "at": "2026-10-26T09:15:00.000Z"
+        }
+      ]
+    }
+  ],
+  "usage": [
+    {
+      "date": "2026-09-27",
+      "agentId": "agt_001",
+      "tokens": 427
+    },
+    {
+      "date": "2026-09-27",
+      "agentId": "agt_002",
+      "tokens": 1037
+    },
+    {
+      "date": "2026-09-27",
+      "agentId": "agt_003",
+      "tokens": 597
+    },
+    {
+      "date": "2026-09-27",
+      "agentId": "agt_004",
+      "tokens": 1244
+    },
+    {
+      "date": "2026-09-27",
+      "agentId": "agt_005",
+      "tokens": 1481
+    },
+    {
+      "date": "2026-09-27",
+      "agentId": "agt_006",
+      "tokens": 757
+    },
+    {
+      "date": "2026-09-27",
+      "agentId": "agt_007",
+      "tokens": 657
+    },
+    {
+      "date": "2026-09-27",
+      "agentId": "agt_008",
+      "tokens": 2001
+    },
+    {
+      "date": "2026-09-28",
+      "agentId": "agt_001",
+      "tokens": 1359
+    },
+    {
+      "date": "2026-09-28",
+      "agentId": "agt_002",
+      "tokens": 1530
+    },
+    {
+      "date": "2026-09-28",
+      "agentId": "agt_003",
+      "tokens": 1484
+    },
+    {
+      "date": "2026-09-28",
+      "agentId": "agt_004",
+      "tokens": 2419
+    },
+    {
+      "date": "2026-09-28",
+      "agentId": "agt_005",
+      "tokens": 3408
+    },
+    {
+      "date": "2026-09-28",
+      "agentId": "agt_006",
+      "tokens": 3630
+    },
+    {
+      "date": "2026-09-28",
+      "agentId": "agt_007",
+      "tokens": 1826
+    },
+    {
+      "date": "2026-09-28",
+      "agentId": "agt_008",
+      "tokens": 1519
+    },
+    {
+      "date": "2026-09-29",
+      "agentId": "agt_001",
+      "tokens": 2803
+    },
+    {
+      "date": "2026-09-29",
+      "agentId": "agt_002",
+      "tokens": 1461
+    },
+    {
+      "date": "2026-09-29",
+      "agentId": "agt_003",
+      "tokens": 3334
+    },
+    {
+      "date": "2026-09-29",
+      "agentId": "agt_004",
+      "tokens": 1285
+    },
+    {
+      "date": "2026-09-29",
+      "agentId": "agt_005",
+      "tokens": 1262
+    },
+    {
+      "date": "2026-09-29",
+      "agentId": "agt_006",
+      "tokens": 1943
+    },
+    {
+      "date": "2026-09-29",
+      "agentId": "agt_007",
+      "tokens": 1627
+    },
+    {
+      "date": "2026-09-29",
+      "agentId": "agt_008",
+      "tokens": 1409
+    },
+    {
+      "date": "2026-09-30",
+      "agentId": "agt_001",
+      "tokens": 1408
+    },
+    {
+      "date": "2026-09-30",
+      "agentId": "agt_002",
+      "tokens": 2494
+    },
+    {
+      "date": "2026-09-30",
+      "agentId": "agt_003",
+      "tokens": 1703
+    },
+    {
+      "date": "2026-09-30",
+      "agentId": "agt_004",
+      "tokens": 1758
+    },
+    {
+      "date": "2026-09-30",
+      "agentId": "agt_005",
+      "tokens": 2387
+    },
+    {
+      "date": "2026-09-30",
+      "agentId": "agt_006",
+      "tokens": 2404
+    },
+    {
+      "date": "2026-09-30",
+      "agentId": "agt_007",
+      "tokens": 3127
+    },
+    {
+      "date": "2026-09-30",
+      "agentId": "agt_008",
+      "tokens": 2109
+    },
+    {
+      "date": "2026-10-01",
+      "agentId": "agt_001",
+      "tokens": 1359
+    },
+    {
+      "date": "2026-10-01",
+      "agentId": "agt_002",
+      "tokens": 1241
+    },
+    {
+      "date": "2026-10-01",
+      "agentId": "agt_003",
+      "tokens": 2439
+    },
+    {
+      "date": "2026-10-01",
+      "agentId": "agt_004",
+      "tokens": 3739
+    },
+    {
+      "date": "2026-10-01",
+      "agentId": "agt_005",
+      "tokens": 1496
+    },
+    {
+      "date": "2026-10-01",
+      "agentId": "agt_006",
+      "tokens": 3476
+    },
+    {
+      "date": "2026-10-01",
+      "agentId": "agt_007",
+      "tokens": 2922
+    },
+    {
+      "date": "2026-10-01",
+      "agentId": "agt_008",
+      "tokens": 4268
+    },
+    {
+      "date": "2026-10-02",
+      "agentId": "agt_001",
+      "tokens": 1313
+    },
+    {
+      "date": "2026-10-02",
+      "agentId": "agt_002",
+      "tokens": 1615
+    },
+    {
+      "date": "2026-10-02",
+      "agentId": "agt_003",
+      "tokens": 2859
+    },
+    {
+      "date": "2026-10-02",
+      "agentId": "agt_004",
+      "tokens": 1543
+    },
+    {
+      "date": "2026-10-02",
+      "agentId": "agt_005",
+      "tokens": 2170
+    },
+    {
+      "date": "2026-10-02",
+      "agentId": "agt_006",
+      "tokens": 1789
+    },
+    {
+      "date": "2026-10-02",
+      "agentId": "agt_007",
+      "tokens": 3117
+    },
+    {
+      "date": "2026-10-02",
+      "agentId": "agt_008",
+      "tokens": 3753
+    },
+    {
+      "date": "2026-10-03",
+      "agentId": "agt_001",
+      "tokens": 431
+    },
+    {
+      "date": "2026-10-03",
+      "agentId": "agt_002",
+      "tokens": 1098
+    },
+    {
+      "date": "2026-10-03",
+      "agentId": "agt_003",
+      "tokens": 1142
+    },
+    {
+      "date": "2026-10-03",
+      "agentId": "agt_004",
+      "tokens": 1545
+    },
+    {
+      "date": "2026-10-03",
+      "agentId": "agt_005",
+      "tokens": 1566
+    },
+    {
+      "date": "2026-10-03",
+      "agentId": "agt_006",
+      "tokens": 840
+    },
+    {
+      "date": "2026-10-03",
+      "agentId": "agt_007",
+      "tokens": 1066
+    },
+    {
+      "date": "2026-10-03",
+      "agentId": "agt_008",
+      "tokens": 816
+    },
+    {
+      "date": "2026-10-04",
+      "agentId": "agt_001",
+      "tokens": 855
+    },
+    {
+      "date": "2026-10-04",
+      "agentId": "agt_002",
+      "tokens": 1176
+    },
+    {
+      "date": "2026-10-04",
+      "agentId": "agt_003",
+      "tokens": 1337
+    },
+    {
+      "date": "2026-10-04",
+      "agentId": "agt_004",
+      "tokens": 684
+    },
+    {
+      "date": "2026-10-04",
+      "agentId": "agt_005",
+      "tokens": 1747
+    },
+    {
+      "date": "2026-10-04",
+      "agentId": "agt_006",
+      "tokens": 576
+    },
+    {
+      "date": "2026-10-04",
+      "agentId": "agt_007",
+      "tokens": 889
+    },
+    {
+      "date": "2026-10-04",
+      "agentId": "agt_008",
+      "tokens": 1366
+    },
+    {
+      "date": "2026-10-05",
+      "agentId": "agt_001",
+      "tokens": 1505
+    },
+    {
+      "date": "2026-10-05",
+      "agentId": "agt_002",
+      "tokens": 2405
+    },
+    {
+      "date": "2026-10-05",
+      "agentId": "agt_003",
+      "tokens": 3820
+    },
+    {
+      "date": "2026-10-05",
+      "agentId": "agt_004",
+      "tokens": 3900
+    },
+    {
+      "date": "2026-10-05",
+      "agentId": "agt_005",
+      "tokens": 2483
+    },
+    {
+      "date": "2026-10-05",
+      "agentId": "agt_006",
+      "tokens": 2514
+    },
+    {
+      "date": "2026-10-05",
+      "agentId": "agt_007",
+      "tokens": 3136
+    },
+    {
+      "date": "2026-10-05",
+      "agentId": "agt_008",
+      "tokens": 2650
+    },
+    {
+      "date": "2026-10-06",
+      "agentId": "agt_001",
+      "tokens": 2144
+    },
+    {
+      "date": "2026-10-06",
+      "agentId": "agt_002",
+      "tokens": 2798
+    },
+    {
+      "date": "2026-10-06",
+      "agentId": "agt_003",
+      "tokens": 3489
+    },
+    {
+      "date": "2026-10-06",
+      "agentId": "agt_004",
+      "tokens": 1456
+    },
+    {
+      "date": "2026-10-06",
+      "agentId": "agt_005",
+      "tokens": 3164
+    },
+    {
+      "date": "2026-10-06",
+      "agentId": "agt_006",
+      "tokens": 2089
+    },
+    {
+      "date": "2026-10-06",
+      "agentId": "agt_007",
+      "tokens": 2443
+    },
+    {
+      "date": "2026-10-06",
+      "agentId": "agt_008",
+      "tokens": 2056
+    },
+    {
+      "date": "2026-10-07",
+      "agentId": "agt_001",
+      "tokens": 1995
+    },
+    {
+      "date": "2026-10-07",
+      "agentId": "agt_002",
+      "tokens": 1324
+    },
+    {
+      "date": "2026-10-07",
+      "agentId": "agt_003",
+      "tokens": 1941
+    },
+    {
+      "date": "2026-10-07",
+      "agentId": "agt_004",
+      "tokens": 1238
+    },
+    {
+      "date": "2026-10-07",
+      "agentId": "agt_005",
+      "tokens": 2889
+    },
+    {
+      "date": "2026-10-07",
+      "agentId": "agt_006",
+      "tokens": 1877
+    },
+    {
+      "date": "2026-10-07",
+      "agentId": "agt_007",
+      "tokens": 4820
+    },
+    {
+      "date": "2026-10-07",
+      "agentId": "agt_008",
+      "tokens": 4867
+    },
+    {
+      "date": "2026-10-08",
+      "agentId": "agt_001",
+      "tokens": 2082
+    },
+    {
+      "date": "2026-10-08",
+      "agentId": "agt_002",
+      "tokens": 1827
+    },
+    {
+      "date": "2026-10-08",
+      "agentId": "agt_003",
+      "tokens": 1885
+    },
+    {
+      "date": "2026-10-08",
+      "agentId": "agt_004",
+      "tokens": 3621
+    },
+    {
+      "date": "2026-10-08",
+      "agentId": "agt_005",
+      "tokens": 1275
+    },
+    {
+      "date": "2026-10-08",
+      "agentId": "agt_006",
+      "tokens": 2874
+    },
+    {
+      "date": "2026-10-08",
+      "agentId": "agt_007",
+      "tokens": 2516
+    },
+    {
+      "date": "2026-10-08",
+      "agentId": "agt_008",
+      "tokens": 2084
+    },
+    {
+      "date": "2026-10-09",
+      "agentId": "agt_001",
+      "tokens": 2242
+    },
+    {
+      "date": "2026-10-09",
+      "agentId": "agt_002",
+      "tokens": 1271
+    },
+    {
+      "date": "2026-10-09",
+      "agentId": "agt_003",
+      "tokens": 1155
+    },
+    {
+      "date": "2026-10-09",
+      "agentId": "agt_004",
+      "tokens": 1846
+    },
+    {
+      "date": "2026-10-09",
+      "agentId": "agt_005",
+      "tokens": 2072
+    },
+    {
+      "date": "2026-10-09",
+      "agentId": "agt_006",
+      "tokens": 3263
+    },
+    {
+      "date": "2026-10-09",
+      "agentId": "agt_007",
+      "tokens": 4123
+    },
+    {
+      "date": "2026-10-09",
+      "agentId": "agt_008",
+      "tokens": 4340
+    },
+    {
+      "date": "2026-10-10",
+      "agentId": "agt_001",
+      "tokens": 565
+    },
+    {
+      "date": "2026-10-10",
+      "agentId": "agt_002",
+      "tokens": 1528
+    },
+    {
+      "date": "2026-10-10",
+      "agentId": "agt_003",
+      "tokens": 687
+    },
+    {
+      "date": "2026-10-10",
+      "agentId": "agt_004",
+      "tokens": 1285
+    },
+    {
+      "date": "2026-10-10",
+      "agentId": "agt_005",
+      "tokens": 915
+    },
+    {
+      "date": "2026-10-10",
+      "agentId": "agt_006",
+      "tokens": 1597
+    },
+    {
+      "date": "2026-10-10",
+      "agentId": "agt_007",
+      "tokens": 1272
+    },
+    {
+      "date": "2026-10-10",
+      "agentId": "agt_008",
+      "tokens": 1139
+    },
+    {
+      "date": "2026-10-11",
+      "agentId": "agt_001",
+      "tokens": 835
+    },
+    {
+      "date": "2026-10-11",
+      "agentId": "agt_002",
+      "tokens": 1199
+    },
+    {
+      "date": "2026-10-11",
+      "agentId": "agt_003",
+      "tokens": 1464
+    },
+    {
+      "date": "2026-10-11",
+      "agentId": "agt_004",
+      "tokens": 1488
+    },
+    {
+      "date": "2026-10-11",
+      "agentId": "agt_005",
+      "tokens": 665
+    },
+    {
+      "date": "2026-10-11",
+      "agentId": "agt_006",
+      "tokens": 1522
+    },
+    {
+      "date": "2026-10-11",
+      "agentId": "agt_007",
+      "tokens": 1000
+    },
+    {
+      "date": "2026-10-11",
+      "agentId": "agt_008",
+      "tokens": 1677
+    },
+    {
+      "date": "2026-10-12",
+      "agentId": "agt_001",
+      "tokens": 3114
+    },
+    {
+      "date": "2026-10-12",
+      "agentId": "agt_002",
+      "tokens": 3492
+    },
+    {
+      "date": "2026-10-12",
+      "agentId": "agt_003",
+      "tokens": 1058
+    },
+    {
+      "date": "2026-10-12",
+      "agentId": "agt_004",
+      "tokens": 3625
+    },
+    {
+      "date": "2026-10-12",
+      "agentId": "agt_005",
+      "tokens": 2104
+    },
+    {
+      "date": "2026-10-12",
+      "agentId": "agt_006",
+      "tokens": 1316
+    },
+    {
+      "date": "2026-10-12",
+      "agentId": "agt_007",
+      "tokens": 4703
+    },
+    {
+      "date": "2026-10-12",
+      "agentId": "agt_008",
+      "tokens": 3992
+    },
+    {
+      "date": "2026-10-13",
+      "agentId": "agt_001",
+      "tokens": 1923
+    },
+    {
+      "date": "2026-10-13",
+      "agentId": "agt_002",
+      "tokens": 3455
+    },
+    {
+      "date": "2026-10-13",
+      "agentId": "agt_003",
+      "tokens": 2893
+    },
+    {
+      "date": "2026-10-13",
+      "agentId": "agt_004",
+      "tokens": 3561
+    },
+    {
+      "date": "2026-10-13",
+      "agentId": "agt_005",
+      "tokens": 3907
+    },
+    {
+      "date": "2026-10-13",
+      "agentId": "agt_006",
+      "tokens": 3914
+    },
+    {
+      "date": "2026-10-13",
+      "agentId": "agt_007",
+      "tokens": 3710
+    },
+    {
+      "date": "2026-10-13",
+      "agentId": "agt_008",
+      "tokens": 3888
+    },
+    {
+      "date": "2026-10-14",
+      "agentId": "agt_001",
+      "tokens": 1592
+    },
+    {
+      "date": "2026-10-14",
+      "agentId": "agt_002",
+      "tokens": 1134
+    },
+    {
+      "date": "2026-10-14",
+      "agentId": "agt_003",
+      "tokens": 2441
+    },
+    {
+      "date": "2026-10-14",
+      "agentId": "agt_004",
+      "tokens": 2073
+    },
+    {
+      "date": "2026-10-14",
+      "agentId": "agt_005",
+      "tokens": 4269
+    },
+    {
+      "date": "2026-10-14",
+      "agentId": "agt_006",
+      "tokens": 1520
+    },
+    {
+      "date": "2026-10-14",
+      "agentId": "agt_007",
+      "tokens": 3619
+    },
+    {
+      "date": "2026-10-14",
+      "agentId": "agt_008",
+      "tokens": 2179
+    },
+    {
+      "date": "2026-10-15",
+      "agentId": "agt_001",
+      "tokens": 1454
+    },
+    {
+      "date": "2026-10-15",
+      "agentId": "agt_002",
+      "tokens": 1576
+    },
+    {
+      "date": "2026-10-15",
+      "agentId": "agt_003",
+      "tokens": 3137
+    },
+    {
+      "date": "2026-10-15",
+      "agentId": "agt_004",
+      "tokens": 3394
+    },
+    {
+      "date": "2026-10-15",
+      "agentId": "agt_005",
+      "tokens": 3234
+    },
+    {
+      "date": "2026-10-15",
+      "agentId": "agt_006",
+      "tokens": 4243
+    },
+    {
+      "date": "2026-10-16",
+      "agentId": "agt_001",
+      "tokens": 3198
+    },
+    {
+      "date": "2026-10-16",
+      "agentId": "agt_002",
+      "tokens": 1625
+    },
+    {
+      "date": "2026-10-16",
+      "agentId": "agt_003",
+      "tokens": 3010
+    },
+    {
+      "date": "2026-10-16",
+      "agentId": "agt_004",
+      "tokens": 2344
+    },
+    {
+      "date": "2026-10-16",
+      "agentId": "agt_005",
+      "tokens": 3750
+    },
+    {
+      "date": "2026-10-16",
+      "agentId": "agt_006",
+      "tokens": 2187
+    },
+    {
+      "date": "2026-10-17",
+      "agentId": "agt_001",
+      "tokens": 1316
+    },
+    {
+      "date": "2026-10-17",
+      "agentId": "agt_002",
+      "tokens": 1192
+    },
+    {
+      "date": "2026-10-17",
+      "agentId": "agt_003",
+      "tokens": 730
+    },
+    {
+      "date": "2026-10-17",
+      "agentId": "agt_004",
+      "tokens": 502
+    },
+    {
+      "date": "2026-10-17",
+      "agentId": "agt_005",
+      "tokens": 1862
+    },
+    {
+      "date": "2026-10-17",
+      "agentId": "agt_006",
+      "tokens": 1259
+    },
+    {
+      "date": "2026-10-18",
+      "agentId": "agt_001",
+      "tokens": 470
+    },
+    {
+      "date": "2026-10-18",
+      "agentId": "agt_002",
+      "tokens": 583
+    },
+    {
+      "date": "2026-10-18",
+      "agentId": "agt_003",
+      "tokens": 1141
+    },
+    {
+      "date": "2026-10-18",
+      "agentId": "agt_004",
+      "tokens": 1644
+    },
+    {
+      "date": "2026-10-18",
+      "agentId": "agt_005",
+      "tokens": 1742
+    },
+    {
+      "date": "2026-10-18",
+      "agentId": "agt_006",
+      "tokens": 1310
+    },
+    {
+      "date": "2026-10-19",
+      "agentId": "agt_001",
+      "tokens": 1839
+    },
+    {
+      "date": "2026-10-19",
+      "agentId": "agt_002",
+      "tokens": 1165
+    },
+    {
+      "date": "2026-10-19",
+      "agentId": "agt_003",
+      "tokens": 2500
+    },
+    {
+      "date": "2026-10-19",
+      "agentId": "agt_004",
+      "tokens": 2401
+    },
+    {
+      "date": "2026-10-19",
+      "agentId": "agt_005",
+      "tokens": 1828
+    },
+    {
+      "date": "2026-10-19",
+      "agentId": "agt_006",
+      "tokens": 2167
+    },
+    {
+      "date": "2026-10-20",
+      "agentId": "agt_001",
+      "tokens": 2177
+    },
+    {
+      "date": "2026-10-20",
+      "agentId": "agt_002",
+      "tokens": 3444
+    },
+    {
+      "date": "2026-10-20",
+      "agentId": "agt_003",
+      "tokens": 1737
+    },
+    {
+      "date": "2026-10-20",
+      "agentId": "agt_004",
+      "tokens": 3390
+    },
+    {
+      "date": "2026-10-20",
+      "agentId": "agt_005",
+      "tokens": 4008
+    },
+    {
+      "date": "2026-10-20",
+      "agentId": "agt_006",
+      "tokens": 3795
+    },
+    {
+      "date": "2026-10-21",
+      "agentId": "agt_001",
+      "tokens": 2600
+    },
+    {
+      "date": "2026-10-21",
+      "agentId": "agt_002",
+      "tokens": 1347
+    },
+    {
+      "date": "2026-10-21",
+      "agentId": "agt_003",
+      "tokens": 2155
+    },
+    {
+      "date": "2026-10-21",
+      "agentId": "agt_004",
+      "tokens": 3312
+    },
+    {
+      "date": "2026-10-21",
+      "agentId": "agt_005",
+      "tokens": 1794
+    },
+    {
+      "date": "2026-10-21",
+      "agentId": "agt_006",
+      "tokens": 2927
+    },
+    {
+      "date": "2026-10-22",
+      "agentId": "agt_001",
+      "tokens": 1421
+    },
+    {
+      "date": "2026-10-22",
+      "agentId": "agt_002",
+      "tokens": 2363
+    },
+    {
+      "date": "2026-10-22",
+      "agentId": "agt_003",
+      "tokens": 2926
+    },
+    {
+      "date": "2026-10-22",
+      "agentId": "agt_004",
+      "tokens": 3089
+    },
+    {
+      "date": "2026-10-22",
+      "agentId": "agt_005",
+      "tokens": 3143
+    },
+    {
+      "date": "2026-10-22",
+      "agentId": "agt_006",
+      "tokens": 1415
+    },
+    {
+      "date": "2026-10-23",
+      "agentId": "agt_001",
+      "tokens": 1301
+    },
+    {
+      "date": "2026-10-23",
+      "agentId": "agt_002",
+      "tokens": 1975
+    },
+    {
+      "date": "2026-10-23",
+      "agentId": "agt_003",
+      "tokens": 1876
+    },
+    {
+      "date": "2026-10-23",
+      "agentId": "agt_004",
+      "tokens": 2437
+    },
+    {
+      "date": "2026-10-23",
+      "agentId": "agt_005",
+      "tokens": 3120
+    },
+    {
+      "date": "2026-10-23",
+      "agentId": "agt_006",
+      "tokens": 4273
+    },
+    {
+      "date": "2026-10-24",
+      "agentId": "agt_001",
+      "tokens": 975
+    },
+    {
+      "date": "2026-10-24",
+      "agentId": "agt_002",
+      "tokens": 676
+    },
+    {
+      "date": "2026-10-24",
+      "agentId": "agt_003",
+      "tokens": 806
+    },
+    {
+      "date": "2026-10-24",
+      "agentId": "agt_004",
+      "tokens": 881
+    },
+    {
+      "date": "2026-10-24",
+      "agentId": "agt_005",
+      "tokens": 1786
+    },
+    {
+      "date": "2026-10-24",
+      "agentId": "agt_006",
+      "tokens": 571
+    },
+    {
+      "date": "2026-10-25",
+      "agentId": "agt_001",
+      "tokens": 1016
+    },
+    {
+      "date": "2026-10-25",
+      "agentId": "agt_002",
+      "tokens": 1400
+    },
+    {
+      "date": "2026-10-25",
+      "agentId": "agt_003",
+      "tokens": 1127
+    },
+    {
+      "date": "2026-10-25",
+      "agentId": "agt_004",
+      "tokens": 1141
+    },
+    {
+      "date": "2026-10-25",
+      "agentId": "agt_005",
+      "tokens": 1123
+    },
+    {
+      "date": "2026-10-25",
+      "agentId": "agt_006",
+      "tokens": 1557
+    },
+    {
+      "date": "2026-10-26",
+      "agentId": "agt_001",
+      "tokens": 2160
+    },
+    {
+      "date": "2026-10-26",
+      "agentId": "agt_002",
+      "tokens": 2083
+    },
+    {
+      "date": "2026-10-26",
+      "agentId": "agt_003",
+      "tokens": 3327
+    },
+    {
+      "date": "2026-10-26",
+      "agentId": "agt_004",
+      "tokens": 1691
+    },
+    {
+      "date": "2026-10-26",
+      "agentId": "agt_005",
+      "tokens": 3450
+    },
+    {
+      "date": "2026-10-26",
+      "agentId": "agt_006",
+      "tokens": 2848
+    }
+  ],
+  "activity": [
+    {
+      "id": "act_seed_29_1_0",
+      "date": "2026-09-27",
+      "at": "2026-09-27T08:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_29_2_0",
+      "date": "2026-09-27",
+      "at": "2026-09-27T08:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_29_5_0",
+      "date": "2026-09-27",
+      "at": "2026-09-27T08:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_28_0_0",
+      "date": "2026-09-28",
+      "at": "2026-09-28T08:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_28_0_1",
+      "date": "2026-09-28",
+      "at": "2026-09-28T09:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_28_0_2",
+      "date": "2026-09-28",
+      "at": "2026-09-28T10:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_28_2_0",
+      "date": "2026-09-28",
+      "at": "2026-09-28T08:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_28_3_0",
+      "date": "2026-09-28",
+      "at": "2026-09-28T08:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_28_3_1",
+      "date": "2026-09-28",
+      "at": "2026-09-28T09:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_28_5_0",
+      "date": "2026-09-28",
+      "at": "2026-09-28T08:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_28_5_1",
+      "date": "2026-09-28",
+      "at": "2026-09-28T09:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_28_6_0",
+      "date": "2026-09-28",
+      "at": "2026-09-28T08:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_28_6_1",
+      "date": "2026-09-28",
+      "at": "2026-09-28T09:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_28_6_2",
+      "date": "2026-09-28",
+      "at": "2026-09-28T10:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_28_7_0",
+      "date": "2026-09-28",
+      "at": "2026-09-28T08:00:00.000Z",
+      "agentId": "agt_008",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_28_7_1",
+      "date": "2026-09-28",
+      "at": "2026-09-28T09:00:00.000Z",
+      "agentId": "agt_008",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_27_2_0",
+      "date": "2026-09-29",
+      "at": "2026-09-29T08:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_27_2_1",
+      "date": "2026-09-29",
+      "at": "2026-09-29T09:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_27_2_2",
+      "date": "2026-09-29",
+      "at": "2026-09-29T10:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_27_3_0",
+      "date": "2026-09-29",
+      "at": "2026-09-29T08:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_27_3_1",
+      "date": "2026-09-29",
+      "at": "2026-09-29T09:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_27_3_2",
+      "date": "2026-09-29",
+      "at": "2026-09-29T10:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_27_4_0",
+      "date": "2026-09-29",
+      "at": "2026-09-29T08:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_27_4_1",
+      "date": "2026-09-29",
+      "at": "2026-09-29T09:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_27_5_0",
+      "date": "2026-09-29",
+      "at": "2026-09-29T08:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_27_5_1",
+      "date": "2026-09-29",
+      "at": "2026-09-29T09:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_27_5_2",
+      "date": "2026-09-29",
+      "at": "2026-09-29T10:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_27_5_3",
+      "date": "2026-09-29",
+      "at": "2026-09-29T11:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_27_6_0",
+      "date": "2026-09-29",
+      "at": "2026-09-29T08:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_27_6_1",
+      "date": "2026-09-29",
+      "at": "2026-09-29T09:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_27_6_2",
+      "date": "2026-09-29",
+      "at": "2026-09-29T10:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_27_7_0",
+      "date": "2026-09-29",
+      "at": "2026-09-29T08:00:00.000Z",
+      "agentId": "agt_008",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_26_0_0",
+      "date": "2026-09-30",
+      "at": "2026-09-30T08:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_26_0_1",
+      "date": "2026-09-30",
+      "at": "2026-09-30T09:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_26_1_0",
+      "date": "2026-09-30",
+      "at": "2026-09-30T08:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_26_1_1",
+      "date": "2026-09-30",
+      "at": "2026-09-30T09:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_26_1_2",
+      "date": "2026-09-30",
+      "at": "2026-09-30T10:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_26_3_0",
+      "date": "2026-09-30",
+      "at": "2026-09-30T08:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_26_3_1",
+      "date": "2026-09-30",
+      "at": "2026-09-30T09:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_26_4_0",
+      "date": "2026-09-30",
+      "at": "2026-09-30T08:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_26_4_1",
+      "date": "2026-09-30",
+      "at": "2026-09-30T09:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_26_5_0",
+      "date": "2026-09-30",
+      "at": "2026-09-30T08:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_26_5_1",
+      "date": "2026-09-30",
+      "at": "2026-09-30T09:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_26_6_0",
+      "date": "2026-09-30",
+      "at": "2026-09-30T08:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_26_6_1",
+      "date": "2026-09-30",
+      "at": "2026-09-30T09:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_26_7_0",
+      "date": "2026-09-30",
+      "at": "2026-09-30T08:00:00.000Z",
+      "agentId": "agt_008",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_26_7_1",
+      "date": "2026-09-30",
+      "at": "2026-09-30T09:00:00.000Z",
+      "agentId": "agt_008",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_25_0_0",
+      "date": "2026-10-01",
+      "at": "2026-10-01T08:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_25_1_0",
+      "date": "2026-10-01",
+      "at": "2026-10-01T08:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_25_1_1",
+      "date": "2026-10-01",
+      "at": "2026-10-01T09:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_25_1_2",
+      "date": "2026-10-01",
+      "at": "2026-10-01T10:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_25_1_3",
+      "date": "2026-10-01",
+      "at": "2026-10-01T11:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_25_3_0",
+      "date": "2026-10-01",
+      "at": "2026-10-01T08:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_25_4_0",
+      "date": "2026-10-01",
+      "at": "2026-10-01T08:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_25_4_1",
+      "date": "2026-10-01",
+      "at": "2026-10-01T09:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_25_5_0",
+      "date": "2026-10-01",
+      "at": "2026-10-01T08:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_25_6_0",
+      "date": "2026-10-01",
+      "at": "2026-10-01T08:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_25_6_1",
+      "date": "2026-10-01",
+      "at": "2026-10-01T09:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_25_6_2",
+      "date": "2026-10-01",
+      "at": "2026-10-01T10:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_25_6_3",
+      "date": "2026-10-01",
+      "at": "2026-10-01T11:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_25_7_0",
+      "date": "2026-10-01",
+      "at": "2026-10-01T08:00:00.000Z",
+      "agentId": "agt_008",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_24_0_0",
+      "date": "2026-10-02",
+      "at": "2026-10-02T08:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_24_0_1",
+      "date": "2026-10-02",
+      "at": "2026-10-02T09:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_24_1_0",
+      "date": "2026-10-02",
+      "at": "2026-10-02T08:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_24_1_1",
+      "date": "2026-10-02",
+      "at": "2026-10-02T09:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_24_2_0",
+      "date": "2026-10-02",
+      "at": "2026-10-02T08:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_24_3_0",
+      "date": "2026-10-02",
+      "at": "2026-10-02T08:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_24_3_1",
+      "date": "2026-10-02",
+      "at": "2026-10-02T09:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_24_4_0",
+      "date": "2026-10-02",
+      "at": "2026-10-02T08:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_24_4_1",
+      "date": "2026-10-02",
+      "at": "2026-10-02T09:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_24_4_2",
+      "date": "2026-10-02",
+      "at": "2026-10-02T10:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_24_4_3",
+      "date": "2026-10-02",
+      "at": "2026-10-02T11:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_24_5_0",
+      "date": "2026-10-02",
+      "at": "2026-10-02T08:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_24_5_1",
+      "date": "2026-10-02",
+      "at": "2026-10-02T09:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_24_5_2",
+      "date": "2026-10-02",
+      "at": "2026-10-02T10:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_24_6_0",
+      "date": "2026-10-02",
+      "at": "2026-10-02T08:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_24_6_1",
+      "date": "2026-10-02",
+      "at": "2026-10-02T09:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_24_6_2",
+      "date": "2026-10-02",
+      "at": "2026-10-02T10:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_24_6_3",
+      "date": "2026-10-02",
+      "at": "2026-10-02T11:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_24_7_0",
+      "date": "2026-10-02",
+      "at": "2026-10-02T08:00:00.000Z",
+      "agentId": "agt_008",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_23_0_0",
+      "date": "2026-10-03",
+      "at": "2026-10-03T08:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_23_3_0",
+      "date": "2026-10-03",
+      "at": "2026-10-03T08:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_23_4_0",
+      "date": "2026-10-03",
+      "at": "2026-10-03T08:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_23_6_0",
+      "date": "2026-10-03",
+      "at": "2026-10-03T08:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_23_7_0",
+      "date": "2026-10-03",
+      "at": "2026-10-03T08:00:00.000Z",
+      "agentId": "agt_008",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_23_7_1",
+      "date": "2026-10-03",
+      "at": "2026-10-03T09:00:00.000Z",
+      "agentId": "agt_008",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_22_1_0",
+      "date": "2026-10-04",
+      "at": "2026-10-04T08:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_22_2_0",
+      "date": "2026-10-04",
+      "at": "2026-10-04T08:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_22_3_0",
+      "date": "2026-10-04",
+      "at": "2026-10-04T08:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_22_3_1",
+      "date": "2026-10-04",
+      "at": "2026-10-04T09:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_22_4_0",
+      "date": "2026-10-04",
+      "at": "2026-10-04T08:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_22_5_0",
+      "date": "2026-10-04",
+      "at": "2026-10-04T08:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_22_5_1",
+      "date": "2026-10-04",
+      "at": "2026-10-04T09:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_22_6_0",
+      "date": "2026-10-04",
+      "at": "2026-10-04T08:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_21_0_0",
+      "date": "2026-10-05",
+      "at": "2026-10-05T08:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_21_0_1",
+      "date": "2026-10-05",
+      "at": "2026-10-05T09:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_21_0_2",
+      "date": "2026-10-05",
+      "at": "2026-10-05T10:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_21_1_0",
+      "date": "2026-10-05",
+      "at": "2026-10-05T08:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_21_1_1",
+      "date": "2026-10-05",
+      "at": "2026-10-05T09:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_21_1_2",
+      "date": "2026-10-05",
+      "at": "2026-10-05T10:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_21_2_0",
+      "date": "2026-10-05",
+      "at": "2026-10-05T08:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_21_2_1",
+      "date": "2026-10-05",
+      "at": "2026-10-05T09:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_21_3_0",
+      "date": "2026-10-05",
+      "at": "2026-10-05T08:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_21_3_1",
+      "date": "2026-10-05",
+      "at": "2026-10-05T09:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_21_3_2",
+      "date": "2026-10-05",
+      "at": "2026-10-05T10:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_21_3_3",
+      "date": "2026-10-05",
+      "at": "2026-10-05T11:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_21_4_0",
+      "date": "2026-10-05",
+      "at": "2026-10-05T08:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_21_5_0",
+      "date": "2026-10-05",
+      "at": "2026-10-05T08:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_21_5_1",
+      "date": "2026-10-05",
+      "at": "2026-10-05T09:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_21_6_0",
+      "date": "2026-10-05",
+      "at": "2026-10-05T08:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_21_6_1",
+      "date": "2026-10-05",
+      "at": "2026-10-05T09:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_21_7_0",
+      "date": "2026-10-05",
+      "at": "2026-10-05T08:00:00.000Z",
+      "agentId": "agt_008",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_21_7_1",
+      "date": "2026-10-05",
+      "at": "2026-10-05T09:00:00.000Z",
+      "agentId": "agt_008",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_20_0_0",
+      "date": "2026-10-06",
+      "at": "2026-10-06T08:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_20_1_0",
+      "date": "2026-10-06",
+      "at": "2026-10-06T08:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_20_2_0",
+      "date": "2026-10-06",
+      "at": "2026-10-06T08:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_20_2_1",
+      "date": "2026-10-06",
+      "at": "2026-10-06T09:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_20_4_0",
+      "date": "2026-10-06",
+      "at": "2026-10-06T08:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_20_5_0",
+      "date": "2026-10-06",
+      "at": "2026-10-06T08:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_20_5_1",
+      "date": "2026-10-06",
+      "at": "2026-10-06T09:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_20_5_2",
+      "date": "2026-10-06",
+      "at": "2026-10-06T10:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_20_6_0",
+      "date": "2026-10-06",
+      "at": "2026-10-06T08:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_20_6_1",
+      "date": "2026-10-06",
+      "at": "2026-10-06T09:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_20_6_2",
+      "date": "2026-10-06",
+      "at": "2026-10-06T10:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_20_6_3",
+      "date": "2026-10-06",
+      "at": "2026-10-06T11:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_19_0_0",
+      "date": "2026-10-07",
+      "at": "2026-10-07T08:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_19_0_1",
+      "date": "2026-10-07",
+      "at": "2026-10-07T09:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_19_0_2",
+      "date": "2026-10-07",
+      "at": "2026-10-07T10:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_19_1_0",
+      "date": "2026-10-07",
+      "at": "2026-10-07T08:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_19_1_1",
+      "date": "2026-10-07",
+      "at": "2026-10-07T09:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_19_2_0",
+      "date": "2026-10-07",
+      "at": "2026-10-07T08:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_19_2_1",
+      "date": "2026-10-07",
+      "at": "2026-10-07T09:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_19_3_0",
+      "date": "2026-10-07",
+      "at": "2026-10-07T08:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_19_3_1",
+      "date": "2026-10-07",
+      "at": "2026-10-07T09:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_19_3_2",
+      "date": "2026-10-07",
+      "at": "2026-10-07T10:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_19_4_0",
+      "date": "2026-10-07",
+      "at": "2026-10-07T08:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_19_4_1",
+      "date": "2026-10-07",
+      "at": "2026-10-07T09:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_19_5_0",
+      "date": "2026-10-07",
+      "at": "2026-10-07T08:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_19_5_1",
+      "date": "2026-10-07",
+      "at": "2026-10-07T09:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_19_5_2",
+      "date": "2026-10-07",
+      "at": "2026-10-07T10:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_19_5_3",
+      "date": "2026-10-07",
+      "at": "2026-10-07T11:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_19_6_0",
+      "date": "2026-10-07",
+      "at": "2026-10-07T08:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_19_6_1",
+      "date": "2026-10-07",
+      "at": "2026-10-07T09:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_19_6_2",
+      "date": "2026-10-07",
+      "at": "2026-10-07T10:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_19_7_0",
+      "date": "2026-10-07",
+      "at": "2026-10-07T08:00:00.000Z",
+      "agentId": "agt_008",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_19_7_1",
+      "date": "2026-10-07",
+      "at": "2026-10-07T09:00:00.000Z",
+      "agentId": "agt_008",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_18_0_0",
+      "date": "2026-10-08",
+      "at": "2026-10-08T08:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_18_0_1",
+      "date": "2026-10-08",
+      "at": "2026-10-08T09:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_18_0_2",
+      "date": "2026-10-08",
+      "at": "2026-10-08T10:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_18_0_3",
+      "date": "2026-10-08",
+      "at": "2026-10-08T11:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_18_1_0",
+      "date": "2026-10-08",
+      "at": "2026-10-08T08:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_18_2_0",
+      "date": "2026-10-08",
+      "at": "2026-10-08T08:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_18_2_1",
+      "date": "2026-10-08",
+      "at": "2026-10-08T09:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_18_2_2",
+      "date": "2026-10-08",
+      "at": "2026-10-08T10:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_18_3_0",
+      "date": "2026-10-08",
+      "at": "2026-10-08T08:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_18_3_1",
+      "date": "2026-10-08",
+      "at": "2026-10-08T09:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_18_4_0",
+      "date": "2026-10-08",
+      "at": "2026-10-08T08:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_18_4_1",
+      "date": "2026-10-08",
+      "at": "2026-10-08T09:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_18_4_2",
+      "date": "2026-10-08",
+      "at": "2026-10-08T10:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_18_5_0",
+      "date": "2026-10-08",
+      "at": "2026-10-08T08:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_18_5_1",
+      "date": "2026-10-08",
+      "at": "2026-10-08T09:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_18_6_0",
+      "date": "2026-10-08",
+      "at": "2026-10-08T08:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_18_7_0",
+      "date": "2026-10-08",
+      "at": "2026-10-08T08:00:00.000Z",
+      "agentId": "agt_008",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_18_7_1",
+      "date": "2026-10-08",
+      "at": "2026-10-08T09:00:00.000Z",
+      "agentId": "agt_008",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_18_7_2",
+      "date": "2026-10-08",
+      "at": "2026-10-08T10:00:00.000Z",
+      "agentId": "agt_008",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_17_1_0",
+      "date": "2026-10-09",
+      "at": "2026-10-09T08:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_17_2_0",
+      "date": "2026-10-09",
+      "at": "2026-10-09T08:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_17_2_1",
+      "date": "2026-10-09",
+      "at": "2026-10-09T09:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_17_2_2",
+      "date": "2026-10-09",
+      "at": "2026-10-09T10:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_17_3_0",
+      "date": "2026-10-09",
+      "at": "2026-10-09T08:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_17_3_1",
+      "date": "2026-10-09",
+      "at": "2026-10-09T09:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_17_3_2",
+      "date": "2026-10-09",
+      "at": "2026-10-09T10:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_17_3_3",
+      "date": "2026-10-09",
+      "at": "2026-10-09T11:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_17_4_0",
+      "date": "2026-10-09",
+      "at": "2026-10-09T08:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_17_4_1",
+      "date": "2026-10-09",
+      "at": "2026-10-09T09:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_17_5_0",
+      "date": "2026-10-09",
+      "at": "2026-10-09T08:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_17_5_1",
+      "date": "2026-10-09",
+      "at": "2026-10-09T09:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_17_5_2",
+      "date": "2026-10-09",
+      "at": "2026-10-09T10:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_17_5_3",
+      "date": "2026-10-09",
+      "at": "2026-10-09T11:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_17_6_0",
+      "date": "2026-10-09",
+      "at": "2026-10-09T08:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_17_7_0",
+      "date": "2026-10-09",
+      "at": "2026-10-09T08:00:00.000Z",
+      "agentId": "agt_008",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_17_7_1",
+      "date": "2026-10-09",
+      "at": "2026-10-09T09:00:00.000Z",
+      "agentId": "agt_008",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_16_0_0",
+      "date": "2026-10-10",
+      "at": "2026-10-10T08:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_16_0_1",
+      "date": "2026-10-10",
+      "at": "2026-10-10T09:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_16_1_0",
+      "date": "2026-10-10",
+      "at": "2026-10-10T08:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_16_2_0",
+      "date": "2026-10-10",
+      "at": "2026-10-10T08:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_16_3_0",
+      "date": "2026-10-10",
+      "at": "2026-10-10T08:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_16_4_0",
+      "date": "2026-10-10",
+      "at": "2026-10-10T08:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_15_0_0",
+      "date": "2026-10-11",
+      "at": "2026-10-11T08:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_15_1_0",
+      "date": "2026-10-11",
+      "at": "2026-10-11T08:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_15_2_0",
+      "date": "2026-10-11",
+      "at": "2026-10-11T08:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_15_3_0",
+      "date": "2026-10-11",
+      "at": "2026-10-11T08:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_15_4_0",
+      "date": "2026-10-11",
+      "at": "2026-10-11T08:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_15_4_1",
+      "date": "2026-10-11",
+      "at": "2026-10-11T09:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_15_5_0",
+      "date": "2026-10-11",
+      "at": "2026-10-11T08:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_15_6_0",
+      "date": "2026-10-11",
+      "at": "2026-10-11T08:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_15_7_0",
+      "date": "2026-10-11",
+      "at": "2026-10-11T08:00:00.000Z",
+      "agentId": "agt_008",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_14_0_0",
+      "date": "2026-10-12",
+      "at": "2026-10-12T08:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_14_1_0",
+      "date": "2026-10-12",
+      "at": "2026-10-12T08:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_14_1_1",
+      "date": "2026-10-12",
+      "at": "2026-10-12T09:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_14_1_2",
+      "date": "2026-10-12",
+      "at": "2026-10-12T10:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_14_2_0",
+      "date": "2026-10-12",
+      "at": "2026-10-12T08:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_14_2_1",
+      "date": "2026-10-12",
+      "at": "2026-10-12T09:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_14_2_2",
+      "date": "2026-10-12",
+      "at": "2026-10-12T10:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_14_3_0",
+      "date": "2026-10-12",
+      "at": "2026-10-12T08:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_14_4_0",
+      "date": "2026-10-12",
+      "at": "2026-10-12T08:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_14_4_1",
+      "date": "2026-10-12",
+      "at": "2026-10-12T09:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_14_4_2",
+      "date": "2026-10-12",
+      "at": "2026-10-12T10:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_14_5_0",
+      "date": "2026-10-12",
+      "at": "2026-10-12T08:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_14_6_0",
+      "date": "2026-10-12",
+      "at": "2026-10-12T08:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_14_6_1",
+      "date": "2026-10-12",
+      "at": "2026-10-12T09:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_14_6_2",
+      "date": "2026-10-12",
+      "at": "2026-10-12T10:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_14_7_0",
+      "date": "2026-10-12",
+      "at": "2026-10-12T08:00:00.000Z",
+      "agentId": "agt_008",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_14_7_1",
+      "date": "2026-10-12",
+      "at": "2026-10-12T09:00:00.000Z",
+      "agentId": "agt_008",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_14_7_2",
+      "date": "2026-10-12",
+      "at": "2026-10-12T10:00:00.000Z",
+      "agentId": "agt_008",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_13_0_0",
+      "date": "2026-10-13",
+      "at": "2026-10-13T08:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_13_1_0",
+      "date": "2026-10-13",
+      "at": "2026-10-13T08:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_13_2_0",
+      "date": "2026-10-13",
+      "at": "2026-10-13T08:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_13_4_0",
+      "date": "2026-10-13",
+      "at": "2026-10-13T08:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_13_4_1",
+      "date": "2026-10-13",
+      "at": "2026-10-13T09:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_13_5_0",
+      "date": "2026-10-13",
+      "at": "2026-10-13T08:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_13_5_1",
+      "date": "2026-10-13",
+      "at": "2026-10-13T09:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_13_5_2",
+      "date": "2026-10-13",
+      "at": "2026-10-13T10:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_13_6_0",
+      "date": "2026-10-13",
+      "at": "2026-10-13T08:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_13_7_0",
+      "date": "2026-10-13",
+      "at": "2026-10-13T08:00:00.000Z",
+      "agentId": "agt_008",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_13_7_1",
+      "date": "2026-10-13",
+      "at": "2026-10-13T09:00:00.000Z",
+      "agentId": "agt_008",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_13_7_2",
+      "date": "2026-10-13",
+      "at": "2026-10-13T10:00:00.000Z",
+      "agentId": "agt_008",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_12_0_0",
+      "date": "2026-10-14",
+      "at": "2026-10-14T08:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_12_0_1",
+      "date": "2026-10-14",
+      "at": "2026-10-14T09:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_12_0_2",
+      "date": "2026-10-14",
+      "at": "2026-10-14T10:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_12_1_0",
+      "date": "2026-10-14",
+      "at": "2026-10-14T08:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_12_1_1",
+      "date": "2026-10-14",
+      "at": "2026-10-14T09:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_12_1_2",
+      "date": "2026-10-14",
+      "at": "2026-10-14T10:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_12_1_3",
+      "date": "2026-10-14",
+      "at": "2026-10-14T11:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_12_2_0",
+      "date": "2026-10-14",
+      "at": "2026-10-14T08:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_12_2_1",
+      "date": "2026-10-14",
+      "at": "2026-10-14T09:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_12_2_2",
+      "date": "2026-10-14",
+      "at": "2026-10-14T10:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_12_3_0",
+      "date": "2026-10-14",
+      "at": "2026-10-14T08:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_12_3_1",
+      "date": "2026-10-14",
+      "at": "2026-10-14T09:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_12_4_0",
+      "date": "2026-10-14",
+      "at": "2026-10-14T08:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_12_4_1",
+      "date": "2026-10-14",
+      "at": "2026-10-14T09:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_12_4_2",
+      "date": "2026-10-14",
+      "at": "2026-10-14T10:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_12_5_0",
+      "date": "2026-10-14",
+      "at": "2026-10-14T08:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_12_5_1",
+      "date": "2026-10-14",
+      "at": "2026-10-14T09:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_12_5_2",
+      "date": "2026-10-14",
+      "at": "2026-10-14T10:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_12_6_0",
+      "date": "2026-10-14",
+      "at": "2026-10-14T08:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_12_6_1",
+      "date": "2026-10-14",
+      "at": "2026-10-14T09:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_12_6_2",
+      "date": "2026-10-14",
+      "at": "2026-10-14T10:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_12_6_3",
+      "date": "2026-10-14",
+      "at": "2026-10-14T11:00:00.000Z",
+      "agentId": "agt_007",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_12_7_0",
+      "date": "2026-10-14",
+      "at": "2026-10-14T08:00:00.000Z",
+      "agentId": "agt_008",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_12_7_1",
+      "date": "2026-10-14",
+      "at": "2026-10-14T09:00:00.000Z",
+      "agentId": "agt_008",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_12_7_2",
+      "date": "2026-10-14",
+      "at": "2026-10-14T10:00:00.000Z",
+      "agentId": "agt_008",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_11_0_0",
+      "date": "2026-10-15",
+      "at": "2026-10-15T08:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_11_0_1",
+      "date": "2026-10-15",
+      "at": "2026-10-15T09:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_11_0_2",
+      "date": "2026-10-15",
+      "at": "2026-10-15T10:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_11_1_0",
+      "date": "2026-10-15",
+      "at": "2026-10-15T08:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_11_1_1",
+      "date": "2026-10-15",
+      "at": "2026-10-15T09:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_11_3_0",
+      "date": "2026-10-15",
+      "at": "2026-10-15T08:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_11_3_1",
+      "date": "2026-10-15",
+      "at": "2026-10-15T09:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_11_3_2",
+      "date": "2026-10-15",
+      "at": "2026-10-15T10:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_11_4_0",
+      "date": "2026-10-15",
+      "at": "2026-10-15T08:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_11_5_0",
+      "date": "2026-10-15",
+      "at": "2026-10-15T08:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_11_5_1",
+      "date": "2026-10-15",
+      "at": "2026-10-15T09:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_11_5_2",
+      "date": "2026-10-15",
+      "at": "2026-10-15T10:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_11_5_3",
+      "date": "2026-10-15",
+      "at": "2026-10-15T11:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_10_0_0",
+      "date": "2026-10-16",
+      "at": "2026-10-16T08:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_10_0_1",
+      "date": "2026-10-16",
+      "at": "2026-10-16T09:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_10_1_0",
+      "date": "2026-10-16",
+      "at": "2026-10-16T08:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_10_1_1",
+      "date": "2026-10-16",
+      "at": "2026-10-16T09:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_10_1_2",
+      "date": "2026-10-16",
+      "at": "2026-10-16T10:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_10_2_0",
+      "date": "2026-10-16",
+      "at": "2026-10-16T08:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_10_3_0",
+      "date": "2026-10-16",
+      "at": "2026-10-16T08:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_10_3_1",
+      "date": "2026-10-16",
+      "at": "2026-10-16T09:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_10_4_0",
+      "date": "2026-10-16",
+      "at": "2026-10-16T08:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_10_4_1",
+      "date": "2026-10-16",
+      "at": "2026-10-16T09:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_10_5_0",
+      "date": "2026-10-16",
+      "at": "2026-10-16T08:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_9_0_0",
+      "date": "2026-10-17",
+      "at": "2026-10-17T08:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_9_1_0",
+      "date": "2026-10-17",
+      "at": "2026-10-17T08:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_9_1_1",
+      "date": "2026-10-17",
+      "at": "2026-10-17T09:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_9_4_0",
+      "date": "2026-10-17",
+      "at": "2026-10-17T08:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_9_4_1",
+      "date": "2026-10-17",
+      "at": "2026-10-17T09:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_9_5_0",
+      "date": "2026-10-17",
+      "at": "2026-10-17T08:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_8_3_0",
+      "date": "2026-10-18",
+      "at": "2026-10-18T08:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_8_5_0",
+      "date": "2026-10-18",
+      "at": "2026-10-18T08:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_7_0_0",
+      "date": "2026-10-19",
+      "at": "2026-10-19T08:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_7_1_0",
+      "date": "2026-10-19",
+      "at": "2026-10-19T08:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_7_1_1",
+      "date": "2026-10-19",
+      "at": "2026-10-19T09:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_7_1_2",
+      "date": "2026-10-19",
+      "at": "2026-10-19T10:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_7_1_3",
+      "date": "2026-10-19",
+      "at": "2026-10-19T11:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_7_3_0",
+      "date": "2026-10-19",
+      "at": "2026-10-19T08:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_7_4_0",
+      "date": "2026-10-19",
+      "at": "2026-10-19T08:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_7_5_0",
+      "date": "2026-10-19",
+      "at": "2026-10-19T08:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_7_5_1",
+      "date": "2026-10-19",
+      "at": "2026-10-19T09:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_6_0_0",
+      "date": "2026-10-20",
+      "at": "2026-10-20T08:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_6_0_1",
+      "date": "2026-10-20",
+      "at": "2026-10-20T09:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_6_1_0",
+      "date": "2026-10-20",
+      "at": "2026-10-20T08:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_6_1_1",
+      "date": "2026-10-20",
+      "at": "2026-10-20T09:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_6_1_2",
+      "date": "2026-10-20",
+      "at": "2026-10-20T10:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_6_2_0",
+      "date": "2026-10-20",
+      "at": "2026-10-20T08:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_6_2_1",
+      "date": "2026-10-20",
+      "at": "2026-10-20T09:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_6_2_2",
+      "date": "2026-10-20",
+      "at": "2026-10-20T10:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_6_3_0",
+      "date": "2026-10-20",
+      "at": "2026-10-20T08:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_6_3_1",
+      "date": "2026-10-20",
+      "at": "2026-10-20T09:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_6_4_0",
+      "date": "2026-10-20",
+      "at": "2026-10-20T08:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_6_5_0",
+      "date": "2026-10-20",
+      "at": "2026-10-20T08:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_6_5_1",
+      "date": "2026-10-20",
+      "at": "2026-10-20T09:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_5_0_0",
+      "date": "2026-10-21",
+      "at": "2026-10-21T08:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_5_0_1",
+      "date": "2026-10-21",
+      "at": "2026-10-21T09:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_5_0_2",
+      "date": "2026-10-21",
+      "at": "2026-10-21T10:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_5_0_3",
+      "date": "2026-10-21",
+      "at": "2026-10-21T11:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_5_1_0",
+      "date": "2026-10-21",
+      "at": "2026-10-21T08:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_5_1_1",
+      "date": "2026-10-21",
+      "at": "2026-10-21T09:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_5_1_2",
+      "date": "2026-10-21",
+      "at": "2026-10-21T10:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_5_2_0",
+      "date": "2026-10-21",
+      "at": "2026-10-21T08:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_5_3_0",
+      "date": "2026-10-21",
+      "at": "2026-10-21T08:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_5_4_0",
+      "date": "2026-10-21",
+      "at": "2026-10-21T08:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_5_4_1",
+      "date": "2026-10-21",
+      "at": "2026-10-21T09:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_5_4_2",
+      "date": "2026-10-21",
+      "at": "2026-10-21T10:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_5_5_0",
+      "date": "2026-10-21",
+      "at": "2026-10-21T08:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_5_5_1",
+      "date": "2026-10-21",
+      "at": "2026-10-21T09:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_5_5_2",
+      "date": "2026-10-21",
+      "at": "2026-10-21T10:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_4_1_0",
+      "date": "2026-10-22",
+      "at": "2026-10-22T08:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_4_1_1",
+      "date": "2026-10-22",
+      "at": "2026-10-22T09:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_4_1_2",
+      "date": "2026-10-22",
+      "at": "2026-10-22T10:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_4_2_0",
+      "date": "2026-10-22",
+      "at": "2026-10-22T08:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_4_3_0",
+      "date": "2026-10-22",
+      "at": "2026-10-22T08:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_4_4_0",
+      "date": "2026-10-22",
+      "at": "2026-10-22T08:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_4_5_0",
+      "date": "2026-10-22",
+      "at": "2026-10-22T08:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_4_5_1",
+      "date": "2026-10-22",
+      "at": "2026-10-22T09:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_3_0_0",
+      "date": "2026-10-23",
+      "at": "2026-10-23T08:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_3_0_1",
+      "date": "2026-10-23",
+      "at": "2026-10-23T09:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_3_1_0",
+      "date": "2026-10-23",
+      "at": "2026-10-23T08:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_3_2_0",
+      "date": "2026-10-23",
+      "at": "2026-10-23T08:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_3_3_0",
+      "date": "2026-10-23",
+      "at": "2026-10-23T08:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_3_5_0",
+      "date": "2026-10-23",
+      "at": "2026-10-23T08:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_3_5_1",
+      "date": "2026-10-23",
+      "at": "2026-10-23T09:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_3_5_2",
+      "date": "2026-10-23",
+      "at": "2026-10-23T10:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_2_0_0",
+      "date": "2026-10-24",
+      "at": "2026-10-24T08:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_2_1_0",
+      "date": "2026-10-24",
+      "at": "2026-10-24T08:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_2_1_1",
+      "date": "2026-10-24",
+      "at": "2026-10-24T09:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_2_3_0",
+      "date": "2026-10-24",
+      "at": "2026-10-24T08:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_2_3_1",
+      "date": "2026-10-24",
+      "at": "2026-10-24T09:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_2_4_0",
+      "date": "2026-10-24",
+      "at": "2026-10-24T08:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_2_4_1",
+      "date": "2026-10-24",
+      "at": "2026-10-24T09:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_1_0_0",
+      "date": "2026-10-25",
+      "at": "2026-10-25T08:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_1_1_0",
+      "date": "2026-10-25",
+      "at": "2026-10-25T08:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_1_1_1",
+      "date": "2026-10-25",
+      "at": "2026-10-25T09:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_1_3_0",
+      "date": "2026-10-25",
+      "at": "2026-10-25T08:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_1_5_0",
+      "date": "2026-10-25",
+      "at": "2026-10-25T08:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_0_0_0",
+      "date": "2026-10-26",
+      "at": "2026-10-26T08:00:00.000Z",
+      "agentId": "agt_001",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_0_1_0",
+      "date": "2026-10-26",
+      "at": "2026-10-26T08:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_0_1_1",
+      "date": "2026-10-26",
+      "at": "2026-10-26T09:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_0_1_2",
+      "date": "2026-10-26",
+      "at": "2026-10-26T10:00:00.000Z",
+      "agentId": "agt_002",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_0_2_0",
+      "date": "2026-10-26",
+      "at": "2026-10-26T08:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_0_2_1",
+      "date": "2026-10-26",
+      "at": "2026-10-26T09:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_0_2_2",
+      "date": "2026-10-26",
+      "at": "2026-10-26T10:00:00.000Z",
+      "agentId": "agt_003",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_0_3_0",
+      "date": "2026-10-26",
+      "at": "2026-10-26T08:00:00.000Z",
+      "agentId": "agt_004",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_0_4_0",
+      "date": "2026-10-26",
+      "at": "2026-10-26T08:00:00.000Z",
+      "agentId": "agt_005",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_0_5_0",
+      "date": "2026-10-26",
+      "at": "2026-10-26T08:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    },
+    {
+      "id": "act_seed_0_5_1",
+      "date": "2026-10-26",
+      "at": "2026-10-26T09:00:00.000Z",
+      "agentId": "agt_006",
+      "kind": "task",
+      "label": "Menjalankan langkah misi"
+    }
+  ],
+  "events": [
+    {
+      "id": "evt_seed_1",
+      "at": "2026-10-26T07:15:00.000Z",
+      "type": "system",
+      "message": "Workspace Neuromancer siap. Integrasi Hermes belum diaktifkan."
+    }
+  ]
+}
