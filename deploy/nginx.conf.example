@@ -1,0 +1,31 @@
+# /etc/nginx/sites-available/neuromancer
+#
+# 1) Salin file ini, sesuaikan server_name bila perlu.
+# 2) Aktifkan:
+#      sudo ln -s /etc/nginx/sites-available/neuromancer /etc/nginx/sites-enabled/
+#      sudo nginx -t && sudo systemctl reload nginx
+# 3) Terbitkan TLS (Certbot akan menambahkan blok 443 + redirect):
+#      sudo certbot --nginx -d app.srv2046941.hstgr.cloud
+#
+# Blok HTTP di bawah sengaja tidak memaksa redirect agar tantangan ACME
+# Certbot tetap bisa diakses sebelum sertifikat terbit.
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name app.srv2046941.hstgr.cloud;
+
+    # unggah maksimal 8 MB + overhead base64
+    client_max_body_size 12m;
+
+    location / {
+        proxy_pass http://127.0.0.1:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        # penting: dipakai aplikasi untuk cookie Secure setelah HTTPS aktif
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 60s;
+    }
+}
